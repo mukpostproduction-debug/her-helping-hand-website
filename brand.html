@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Helping Hand — Official C8 Brand Identity System & Asset Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/c8-design-tokens.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--hhh-surface-paper);
+      color: var(--hhh-wordmark-ink);
+      font-family: var(--hhh-font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 96px;
+    }
+
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 251, 248, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hhh-neutral-200);
+      padding: 14px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--hhh-wordmark-ink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--hhh-neutral-200);
+      background: #fff;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--hhh-logo-left-olive);
+      color: var(--hhh-logo-left-olive);
+    }
+
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 36px;
+    }
+
+    .hero-banner {
+      margin: 36px 0 48px;
+      background: var(--hhh-surface-dark);
+      color: var(--hhh-surface-paper);
+      border-radius: 24px;
+      padding: 48px 52px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero-banner { grid-template-columns: 1fr; padding: 32px; }
+    }
+
+    .eyebrow {
+      font-family: var(--hhh-font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9CC39B;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .hero-banner h1 {
+      font-family: var(--hhh-font-display);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      line-height: 1.06;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero-banner p {
+      font-size: 17px;
+      color: rgba(250, 251, 248, 0.86);
+      max-width: 58ch;
+      margin-bottom: 24px;
+    }
+
+    .roadmap-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .roadmap-pill {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      color: #FAFBF8;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .roadmap-pill.done {
+      background: rgba(99, 154, 103, 0.28);
+      border-color: #8FBF93;
+      color: #E6F0E4;
+    }
+
+    .hero-board-preview {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.16);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .hero-board-preview img {
+      width: 100%;
+      display: block;
+    }
+
+    .section-block {
+      margin: 64px 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--hhh-neutral-200);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-family: var(--hhh-font-display);
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--hhh-wordmark-ink);
+    }
+
+    .section-header p {
+      color: var(--hhh-neutral-700);
+      font-size: 16px;
+      max-width: 65ch;
+    }
+
+    /* Step 1: Logo Asset Grid */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .logo-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(20, 38, 24, 0.04);
+    }
+
+    .logo-stage {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background-image: radial-gradient(#d5dfd3 1px, transparent 1px);
+      background-size: 16px 16px;
+      background-color: #FAFBF8;
+      border-bottom: 1px solid var(--hhh-neutral-200);
+    }
+
+    .logo-stage.dark-stage {
+      background: #23472B;
+    }
+
+    .logo-stage.paper-stage {
+      background: #FAFBF8;
+    }
+
+    .logo-stage img {
+      max-width: 100%;
+      max-height: 175px;
+      object-fit: contain;
+    }
+
+    .logo-card-body {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .logo-card-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--hhh-wordmark-ink);
+    }
+
+    .logo-card-use {
+      font-size: 13px;
+      color: var(--hhh-neutral-700);
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .dl-btn {
+      text-decoration: none;
+      font-family: var(--hhh-font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--hhh-neutral-300);
+      color: var(--hhh-wordmark-ink);
+      background: var(--hhh-neutral-50);
+      transition: all 0.15s ease;
+    }
+
+    .dl-btn:hover {
+      background: var(--hhh-logo-left-olive);
+      color: #fff;
+      border-color: var(--hhh-logo-left-olive);
+    }
+
+    .dl-btn.primary-svg {
+      background: var(--hhh-surface-meadow);
+      border-color: var(--hhh-logo-right-sage);
+      color: var(--hhh-logo-left-olive);
+      font-weight: 600;
+    }
+
+    /* Step 2: Color System & Tonal Scale */
+    .core-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .swatch-box {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--hhh-neutral-200);
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .swatch-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .swatch-color {
+      height: 120px;
+      padding: 14px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .contrast-pill {
+      font-family: var(--hhh-font-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(20, 38, 24, 0.78);
+      color: #fff;
+    }
+
+    .swatch-meta {
+      padding: 14px 16px;
+    }
+
+    .swatch-meta h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .swatch-meta .hex {
+      font-family: var(--hhh-font-mono);
+      font-size: 13px;
+      color: var(--hhh-logo-left-olive);
+      font-weight: 600;
+    }
+
+    .swatch-meta p {
+      font-size: 12px;
+      color: var(--hhh-neutral-700);
+      margin-top: 6px;
+    }
+
+    .ramp-row {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .ramp-row { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .ramp-step {
+      height: 76px;
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: var(--hhh-font-mono);
+      font-size: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      cursor: pointer;
+    }
+
+    /* Step 3: Interactive Typography Switcher & Specimen */
+    .font-switcher-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      background: var(--hhh-surface-meadow);
+      padding: 14px 18px;
+      border-radius: 14px;
+      align-items: center;
+    }
+
+    .font-btn {
+      background: #fff;
+      border: 1px solid var(--hhh-neutral-300);
+      color: var(--hhh-wordmark-ink);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .font-btn.active {
+      background: var(--hhh-logo-left-olive);
+      color: #fff;
+      border-color: var(--hhh-logo-left-olive);
+    }
+
+    .type-specimen-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 960px) {
+      .type-specimen-grid { grid-template-columns: 1fr; }
+    }
+
+    .live-web-mockup {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 12px 32px rgba(20, 38, 24, 0.06);
+    }
+
+    .type-scale-table {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .scale-row {
+      border-bottom: 1px solid var(--hhh-neutral-100);
+      padding-bottom: 12px;
+    }
+
+    .scale-label {
+      font-family: var(--hhh-font-mono);
+      font-size: 11px;
+      color: var(--hhh-logo-left-olive);
+      margin-bottom: 4px;
+    }
+
+    /* Step 4: Voice & Say This Not That */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .voice-grid { grid-template-columns: 1fr; }
+    }
+
+    .voice-card {
+      background: #fff;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    table.say-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    table.say-table th, table.say-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--hhh-neutral-200);
+      text-align: left;
+    }
+
+    table.say-table th {
+      font-family: var(--hhh-font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--hhh-neutral-700);
+      background: var(--hhh-neutral-50);
+    }
+
+    .say-yes { color: var(--hhh-logo-left-olive); font-weight: 700; }
+    .say-no { color: #B93829; text-decoration: line-through; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--hhh-wordmark-ink);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-family: var(--hhh-font-mono);
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  
+    .exec-preview-bar {
+      background: #142618;
+      color: #FAFBF8;
+      padding: 10px 28px;
+      font-size: 13px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .exec-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .exec-badge {
+      background: #639A67;
+      color: #142618;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .exec-tabs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .exec-tab {
+      color: #E6F0E4;
+      text-decoration: none;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid rgba(230, 240, 228, 0.22);
+    }
+    .exec-tab.active {
+      background: #FAFBF8;
+      color: #142618;
+      border-color: #FAFBF8;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="exec-preview-bar">
+    <div class="exec-left">
+      <span class="exec-badge">Geoff &amp; Andy Preview</span>
+      <span><strong>Her Helping Hand</strong> · New Website + Locked <code>C8</code> Brand &amp; <code>F05</code> Type System</span>
+    </div>
+    <div class="exec-tabs">
+      <a class="exec-tab " href="index.html">1. Live Website Preview</a>
+      <a class="exec-tab active" href="brand.html">2. C8 Brand Identity &amp; Logo Hub</a>
+      <a class="exec-tab " href="fonts.html">3. F05 Font &amp; Wordmark Studio</a>
+    </div>
+  </div>
+
+
+  <header class="top-nav">
+    <div class="nav-logo">
+      <img src="logos/svg/her-helping-hand-logo-horizontal.svg" alt="Her Helping Hand Horizontal Logo" />
+    </div>
+    <nav class="nav-links">
+      <a href="#step1-logos">1. Logo Suite (SVG / 1080p / 4K)</a>
+      <a href="#step2-colors">2. C8 Colour System &amp; Tokens</a>
+      <a href="#step3-typography">3. Typography &amp; Font Switcher</a>
+      <a href="#step4-voice">4. Brand Voice &amp; Messaging</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero-banner">
+      <div>
+        <span class="eyebrow">Official Brand Identity System · Direction C8</span>
+        <h1>Warmth you can count on.</h1>
+        <p>
+          All exploratory drafts have been cleared. Below is the complete, production-ready <strong>Her Helping Hand</strong> brand identity system built around <strong>Logo H1 (The Linked Hands H)</strong> and <strong>Palette C8 (Heritage Olive &amp; Soft Meadow)</strong>.
+        </p>
+        <div class="roadmap-pills">
+          <span class="roadmap-pill done">✓ 1. Pure Vector SVGs + 1080p &amp; 4K PNGs</span>
+          <span class="roadmap-pill done">✓ 2. C8 9-Step Tonal Scale &amp; WCAG AAA Tokens</span>
+          <span class="roadmap-pill done">✓ 3. Senior-Accessible Typography Scale</span>
+          <span class="roadmap-pill done">✓ 4. Brand Voice &amp; Vocabulary Rules</span>
+        </div>
+      </div>
+      <div class="hero-board-preview">
+        <img src="boards/c8-heritage-olive-brand-board.jpg" alt="C8 Heritage Olive & Soft Meadow 3x3 Brand Board" />
+      </div>
+    </section>
+
+    <!-- STEP 1: LOGO SYSTEM -->
+    <section class="section-block" id="step1-logos">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow" style="color: var(--hhh-logo-left-olive);">Step 1 · Master Vector &amp; High-Res Raster Package</span>
+          <h2>Production Logo Suite (SVG, 1080p HD &amp; Full-Size 4K)</h2>
+        </div>
+        <p>
+          Every file below is generated from pure Bézier vector paths (with zero font dependencies) and exported in <strong>Vector SVG</strong>, <strong>1080p HD PNG</strong>, and <strong>Full-Size 4K PNG</strong>.
+        </p>
+      </div>
+
+      <div class="logo-grid">
+        <!-- 1. Primary Stacked Transparent -->
+        <article class="logo-card">
+          <div class="logo-stage">
+            <img src="logos/svg/her-helping-hand-logo-primary.svg" alt="Primary Stacked Logo Transparent" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">1. Primary Stacked Logo (Transparent BG)</div>
+              <div class="logo-card-use">Main brand lockup for light surfaces, brochures, signage, and print collateral.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-logo-primary.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-logo-1080p-transparent.png" download>↓ 1080p PNG (1920×1080)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-logo-4k-transparent.png" download>↓ 4K Full-Size PNG (3840×2160)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Horizontal Lockup -->
+        <article class="logo-card">
+          <div class="logo-stage">
+            <img src="logos/svg/her-helping-hand-logo-horizontal.svg" alt="Horizontal Navbar Lockup" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">2. Horizontal Website Header Lockup (Transparent BG)</div>
+              <div class="logo-card-use">Website navigation bar, email signatures, letterheads, and narrow banners.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-logo-horizontal.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-horizontal-1080p-transparent.png" download>↓ 1080p PNG (1920×546)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-horizontal-4k-transparent.png" download>↓ 4K Full-Size PNG (3840×1092)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Standalone Two-Tone H1 Mark -->
+        <article class="logo-card">
+          <div class="logo-stage">
+            <img src="logos/svg/her-helping-hand-mark-color.svg" alt="Standalone H1 Linked Hands Mark" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">3. Standalone Linked Hands "H" Mark (1:1 Square)</div>
+              <div class="logo-card-use">Social media avatars, favicons, tote bags, lapel pins, and app icons.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-mark-color.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-mark-1080p-transparent.png" download>↓ 1080p PNG (1080×1080)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-mark-4k-transparent.png" download>↓ 4K Full-Size PNG (4096×4096)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Primary Stacked on Cotton Paper -->
+        <article class="logo-card">
+          <div class="logo-stage paper-stage">
+            <img src="logos/svg/her-helping-hand-logo-paper-bg.svg" alt="Primary Stacked on Cotton Paper" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">4. Primary Logo on Warm Cotton Paper (#FAFBF8)</div>
+              <div class="logo-card-use">Ready-to-post social cards, OpenGraph share images, and presentation title slides.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-logo-paper-bg.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-logo-1080p-paper-bg.png" download>↓ 1080p PNG (1920×1080)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-logo-4k-paper-bg.png" download>↓ 4K Full-Size PNG (3840×2160)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Primary Stacked Inverse on Dark Heritage Olive -->
+        <article class="logo-card">
+          <div class="logo-stage dark-stage">
+            <img src="logos/svg/her-helping-hand-logo-dark-olive-bg.svg" alt="Primary Logo on Dark Heritage Olive" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">5. Inverse Logo on Dark Heritage Olive (#23472B)</div>
+              <div class="logo-card-use">Website footers, dark presentation covers, and print folders.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-logo-dark-olive-bg.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-logo-1080p-dark-olive-bg.png" download>↓ 1080p PNG (1920×1080)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-logo-4k-dark-olive-bg.png" download>↓ 4K Full-Size PNG (3840×2160)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Monochrome Heritage Olive Mark -->
+        <article class="logo-card">
+          <div class="logo-stage">
+            <img src="logos/svg/her-helping-hand-mark-mono-olive.svg" alt="Monochrome Heritage Olive Mark" />
+          </div>
+          <div class="logo-card-body">
+            <div>
+              <div class="logo-card-title">6. Single-Colour Monochrome Mark (#2D5A36)</div>
+              <div class="logo-card-use">1-colour screen printing, embroidery, rubber stamps, and letterpress debossing.</div>
+            </div>
+            <div class="download-row">
+              <a class="dl-btn primary-svg" href="logos/svg/her-helping-hand-mark-mono-olive.svg" download>↓ Vector .SVG</a>
+              <a class="dl-btn" href="logos/png-1080p/her-helping-hand-mark-mono-1080p-transparent.png" download>↓ 1080p PNG (1080×1080)</a>
+              <a class="dl-btn" href="logos/png-fullsize-4k/her-helping-hand-mark-mono-4k-transparent.png" download>↓ 4K Full-Size PNG (4096×4096)</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STEP 2: COLOUR SYSTEM -->
+    <section class="section-block" id="step2-colors">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow" style="color: var(--hhh-logo-left-olive);">Step 2 · 60-30-10 Distribution &amp; WCAG AAA Accessibility</span>
+          <h2>C8 Colour Palette &amp; 9-Step Tonal Scale</h2>
+        </div>
+        <p>Click any swatch card or tonal step below to copy its HEX code. Exported as CSS custom properties in <code>tokens/c8-design-tokens.css</code>.</p>
+      </div>
+
+      <div class="core-swatches">
+        <div class="swatch-box" onclick="copyHex('#2D5A36')">
+          <div class="swatch-color" style="background:#2D5A36;">
+            <span class="contrast-pill">8.0:1 AAA on Paper</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Heritage Olive (Primary)</h3>
+            <div class="hex">#2D5A36 · rgb(45, 90, 54)</div>
+            <p>Left H pillar &amp; hand, primary CTA buttons, active links, focus rings (10% accent).</p>
+          </div>
+        </div>
+
+        <div class="swatch-box" onclick="copyHex('#639A67')">
+          <div class="swatch-color" style="background:#639A67;">
+            <span class="contrast-pill">3.2:1 UI / Graphics</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Soft Meadow Sage (Secondary)</h3>
+            <div class="hex">#639A67 · rgb(99, 154, 103)</div>
+            <p>Right H pillar &amp; hand, icons, decorative borders, stationery envelopes.</p>
+          </div>
+        </div>
+
+        <div class="swatch-box" onclick="copyHex('#FAFBF8')">
+          <div class="swatch-color" style="background:#FAFBF8; border-bottom: 1px solid #E1E7DC;">
+            <span class="contrast-pill" style="background:#142618;">60% Primary Surface</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Warm Cotton Paper</h3>
+            <div class="hex">#FAFBF8 · rgb(250, 251, 248)</div>
+            <p>Default page background, cards, stationery stock (60% of every screen).</p>
+          </div>
+        </div>
+
+        <div class="swatch-box" onclick="copyHex('#E6F0E4')">
+          <div class="swatch-color" style="background:#E6F0E4;">
+            <span class="contrast-pill" style="background:#142618;">13.8:1 AAA w/ Ink</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Meadow Mist (Tint)</h3>
+            <div class="hex">#E6F0E4 · rgb(230, 240, 228)</div>
+            <p>Secondary section backgrounds, callout boxes, badge pills (20% surface).</p>
+          </div>
+        </div>
+
+        <div class="swatch-box" onclick="copyHex('#23472B')">
+          <div class="swatch-color" style="background:#23472B;">
+            <span class="contrast-pill">10.4:1 AAA w/ Paper</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Deep Heritage Olive</h3>
+            <div class="hex">#23472B · rgb(35, 71, 43)</div>
+            <p>Statement quote cards, footer surface, button hover state (10% surface).</p>
+          </div>
+        </div>
+
+        <div class="swatch-box" onclick="copyHex('#142618')">
+          <div class="swatch-color" style="background:#142618;">
+            <span class="contrast-pill">15.6:1 AAA on Paper</span>
+          </div>
+          <div class="swatch-meta">
+            <h3>Deep Olive Ink</h3>
+            <div class="hex">#142618 · rgb(20, 38, 24)</div>
+            <p>Wordmark, all primary headings, and senior-accessible body copy.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; font-family: var(--hhh-font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--hhh-neutral-700);">
+        Full 11-Step Heritage Olive &amp; Meadow Tonal Scale (50–950)
+      </h3>
+      <div class="ramp-row">
+        <div class="ramp-step" style="background:#F3F8F2; color:#142618;" onclick="copyHex('#F3F8F2')"><span>50</span><strong>#F3F8F2</strong></div>
+        <div class="ramp-step" style="background:#E6F0E4; color:#142618;" onclick="copyHex('#E6F0E4')"><span>100</span><strong>#E6F0E4</strong></div>
+        <div class="ramp-step" style="background:#C8DEC5; color:#142618;" onclick="copyHex('#C8DEC5')"><span>200</span><strong>#C8DEC5</strong></div>
+        <div class="ramp-step" style="background:#9CC39B; color:#142618;" onclick="copyHex('#9CC39B')"><span>300</span><strong>#9CC39B</strong></div>
+        <div class="ramp-step" style="background:#639A67; color:#FFFFFF;" onclick="copyHex('#639A67')"><span>400 ★</span><strong>#639A67</strong></div>
+        <div class="ramp-step" style="background:#3E7647; color:#FFFFFF;" onclick="copyHex('#3E7647')"><span>500</span><strong>#3E7647</strong></div>
+        <div class="ramp-step" style="background:#2D5A36; color:#FFFFFF;" onclick="copyHex('#2D5A36')"><span>600 ★</span><strong>#2D5A36</strong></div>
+        <div class="ramp-step" style="background:#23472B; color:#FFFFFF;" onclick="copyHex('#23472B')"><span>700 ★</span><strong>#23472B</strong></div>
+        <div class="ramp-step" style="background:#1B3621; color:#FFFFFF;" onclick="copyHex('#1B3621')"><span>800</span><strong>#1B3621</strong></div>
+        <div class="ramp-step" style="background:#142618; color:#FFFFFF;" onclick="copyHex('#142618')"><span>900 ★</span><strong>#142618</strong></div>
+        <div class="ramp-step" style="background:#0C180F; color:#FFFFFF;" onclick="copyHex('#0C180F')"><span>950</span><strong>#0C180F</strong></div>
+      </div>
+    </section>
+
+    <!-- STEP 3: TYPOGRAPHY & INTERACTIVE FONT SWITCHER -->
+    <section class="section-block" id="step3-typography">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow" style="color: var(--hhh-logo-left-olive);">Step 3 · Senior-Accessible Editorial Type System</span>
+          <h2>Interactive Font Pairing &amp; Modular Scale (18px Base)</h2>
+        </div>
+        <p>Click any of the 4 editorial font pairings below to preview how it feels across the live Her Helping Hand website hero and type scale.</p>
+      </div>
+
+      <div class="font-switcher-bar">
+        <strong style="font-size: 13px; margin-right: 6px;">Locked Brand Font System (F05):</strong>
+        <button class="font-btn active" onclick="setFonts('Newsreader', 'Inter', this)">
+          ★ F05 · Newsreader + Inter (LOCKED — Warm Literary Serif + Crisp UI Sans)
+        </button>
+        <button class="font-btn" onclick="setFonts('Cormorant Garamond', 'Plus Jakarta Sans', this)">
+          F01 · Cormorant Garamond + Plus Jakarta Sans
+        </button>
+        <button class="font-btn" onclick="setFonts('Instrument Serif', 'Plus Jakarta Sans', this)">
+          F03 · Instrument Serif + Plus Jakarta Sans
+        </button>
+        <button class="font-btn" onclick="setFonts('Playfair Display', 'DM Sans', this)">
+          F04 · Playfair Display + DM Sans
+        </button>
+      </div>
+
+      <div class="type-specimen-grid">
+        <div class="live-web-mockup">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--hhh-neutral-200); padding-bottom:16px; margin-bottom:28px;">
+            <img src="logos/svg/her-helping-hand-logo-horizontal.svg" alt="Her Helping Hand" style="height: 40px;" />
+            <span style="background:var(--hhh-logo-left-olive); color:#fff; padding:8px 18px; border-radius:999px; font-size:13px; font-weight:600;">Call 226-339-0680</span>
+          </div>
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.18em; color:var(--hhh-logo-left-olive); margin-bottom:10px;">
+            Trusted Senior Companionship · Waterloo Region
+          </div>
+          <h3 style="font-family: var(--hhh-font-display); font-size: 52px; line-height: 1.08; font-weight: 600; margin-bottom: 18px;">
+            A helping hand, <em style="font-weight:400; color:var(--hhh-logo-left-olive);">right when</em> your family needs one.
+          </h3>
+          <p style="font-size: 19px; line-height: 1.6; color: var(--hhh-neutral-700); max-width: 56ch; margin-bottom: 24px;">
+            Whether it’s unhurried conversation over morning tea, a scenic walk through Waterloo Park, help with groceries and appointments, or keeping the house tidy—we match your parent with the same warm, familiar companion every week.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <span style="background:var(--hhh-logo-left-olive); color:#fff; padding:13px 26px; border-radius:999px; font-size:15px; font-weight:600;">Book a Free Tea &amp; Consultation</span>
+            <span style="background:var(--hhh-surface-meadow); color:var(--hhh-wordmark-ink); padding:13px 24px; border-radius:999px; font-size:15px; font-weight:600;">Meet Andy &amp; Our Helpers</span>
+          </div>
+        </div>
+
+        <div class="type-scale-table">
+          <div class="scale-row">
+            <div class="scale-label">display-lg · 64px / 1.08 · Display Serif SemiBold + Italic</div>
+            <div style="font-family:var(--hhh-font-display); font-size:44px; line-height:1.08; font-weight:600;">Warmth you can <em>count on.</em></div>
+          </div>
+          <div class="scale-row">
+            <div class="scale-label">heading-lg · 42px / 1.15 · Display Serif SemiBold</div>
+            <div style="font-family:var(--hhh-font-display); font-size:32px; line-height:1.15; font-weight:600;">Someone Mom looks forward to seeing.</div>
+          </div>
+          <div class="scale-row">
+            <div class="scale-label">body-lg · 20px / 1.55 · Sans Regular (Max 62ch)</div>
+            <div style="font-size:19px; line-height:1.55; color:var(--hhh-neutral-700);">Consistent, relationship-first companionship across Kitchener, Waterloo, Cambridge, and surrounding townships.</div>
+          </div>
+          <div class="scale-row" style="border-bottom:none;">
+            <div class="scale-label">body-base · 18px / 1.60 · Senior-Accessible Minimum Body Copy</div>
+            <div style="font-size:18px; line-height:1.6; color:var(--hhh-wordmark-ink);">We never send a rotating door of strangers. Your family meets your companion first, and that same trusted helper visits every week.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: BRAND VOICE & VOCABULARY -->
+    <section class="section-block" id="step4-voice">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow" style="color: var(--hhh-logo-left-olive);">Step 4 · Verbal Identity &amp; Messaging Rules</span>
+          <h2>Brand Voice &amp; “Say This, Not That”</h2>
+        </div>
+        <p>Full guidelines documented in <code>01-brand-identity/brand-guidelines.md</code>.</p>
+      </div>
+
+      <div class="voice-grid">
+        <div class="voice-card">
+          <h3 style="font-family:var(--hhh-font-display); font-size:28px; margin-bottom:14px;">3 Core Personality Pillars</h3>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:14px; font-size:15px;">
+            <li><strong style="color:var(--hhh-logo-left-olive);">1. Warm &amp; Neighbourly (Not Clinical):</strong> We sound like Andy &amp; Geoff sitting at your kitchen table—never a hospital bureaucracy or a franchise call centre.</li>
+            <li><strong style="color:var(--hhh-logo-left-olive);">2. Dignified &amp; Adult-to-Adult (Not Patronizing):</strong> Older adults are autonomous people with rich lives and routines. We partner <em>with</em> them, never talk down to them.</li>
+            <li><strong style="color:var(--hhh-logo-left-olive);">3. Dependable &amp; Unhurried (Not Transactional):</strong> We emphasize relationship continuity—the same familiar face every week.</li>
+          </ul>
+        </div>
+
+        <div class="voice-card">
+          <table class="say-table">
+            <thead>
+              <tr>
+                <th>Say This (On-Brand)</th>
+                <th>Not That (Off-Brand)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="say-yes">Companion / Helper</td>
+                <td class="say-no">Caregiver, PSW, Aide, Worker</td>
+              </tr>
+              <tr>
+                <td class="say-yes">Older Adult / Mom or Dad / Client</td>
+                <td class="say-no">Patient, The Elderly, Senior Citizen</td>
+              </tr>
+              <tr>
+                <td class="say-yes">The same familiar face every week</td>
+                <td class="say-no">Shift coverage / staffing allocation</td>
+              </tr>
+              <tr>
+                <td class="say-yes">Free in-home tea &amp; consultation</td>
+                <td class="say-no">Clinical intake assessment</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Copied HEX</div>
+
+  <script>
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex);
+      const t = document.getElementById("toast");
+      t.textContent = `Copied ${hex} to clipboard`;
+      t.classList.add("show");
+      clearTimeout(window.__tt);
+      window.__tt = setTimeout(() => t.classList.remove("show"), 1800);
+    }
+
+    function setFonts(serif, sans, btn) {
+      document.documentElement.style.setProperty("--hhh-font-display", `'${serif}', Georgia, serif`);
+      document.documentElement.style.setProperty("--hhh-font-sans", `'${sans}', -apple-system, sans-serif`);
+      document.querySelectorAll(".font-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
+  </script>
+</body>
+</html>
+

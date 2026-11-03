@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Helping Hand | Meaningful Senior Companionship in Waterloo, Kitchener, St. Jacobs & Elmira</title>
+  <meta name="description" content="Trusted, personal senior companionship and everyday home support in Waterloo, Kitchener, St. Jacobs, and Elmira. Founded and led by Andy McMurdo. Book a complimentary consultation." />
+  <link rel="icon" type="image/svg+xml" href="logos/svg/her-helping-hand-mark-color.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/c8-design-tokens.css" />
+  <style>
+    /*
+     * Design Read: Redesign of herhelpinghand.com for adult children (ages 50–68) & older adults
+     * in Waterloo Region, using locked C8 Heritage Olive & Soft Meadow palette, H1 Linked Hands mark,
+     * and F05 (Newsreader + Inter) senior-accessible typography (18px minimum body copy).
+     */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--hhh-surface-paper);
+      color: var(--hhh-wordmark-ink);
+      font-family: var(--hhh-font-sans);
+      font-size: 18px; /* Senior-accessible 18px base */
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Executive Preview Bar for Geoff & Andy */
+    .exec-preview-bar {
+      background: #142618;
+      color: #FAFBF8;
+      padding: 10px 28px;
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .exec-preview-bar.hidden { display: none; }
+    .exec-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .exec-badge {
+      background: #639A67;
+      color: #142618;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .exec-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .exec-tab {
+      color: #E6F0E4;
+      text-decoration: none;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid rgba(230, 240, 228, 0.22);
+      transition: all 0.15s ease;
+    }
+    .exec-tab:hover {
+      background: rgba(230, 240, 228, 0.12);
+      color: #FFFFFF;
+    }
+    .exec-tab.active {
+      background: #FAFBF8;
+      color: #142618;
+      border-color: #FAFBF8;
+    }
+    .exec-hide-btn {
+      background: transparent;
+      border: none;
+      color: #9CC39B;
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-left: 6px;
+    }
+
+    /* Main Sticky Navigation */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 251, 248, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hhh-neutral-200);
+    }
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 12px;
+    }
+    .brand-link img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--hhh-wordmark-ink);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--hhh-logo-left-olive);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--hhh-font-sans);
+      font-size: 15.5px;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: 1.5px solid transparent;
+      min-height: 48px; /* Senior-accessible tap target */
+    }
+    .btn-primary {
+      background: var(--hhh-logo-left-olive);
+      color: #FAFBF8;
+      box-shadow: 0 4px 14px rgba(45, 90, 54, 0.18);
+    }
+    .btn-primary:hover {
+      background: var(--hhh-surface-dark);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--hhh-surface-meadow);
+      color: var(--hhh-wordmark-ink);
+      border-color: var(--hhh-olive-200);
+    }
+    .btn-secondary:hover {
+      background: var(--hhh-olive-200);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--hhh-wordmark-ink);
+      border-color: var(--hhh-neutral-300);
+    }
+    .btn-outline:hover {
+      border-color: var(--hhh-logo-left-olive);
+      color: var(--hhh-logo-left-olive);
+    }
+
+    @media (max-width: 1060px) {
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .nav-actions .btn-outline { display: none; }
+      .brand-link img { height: 40px; }
+    }
+
+    /* Typography Helpers */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--hhh-logo-left-olive);
+      background: var(--hhh-surface-meadow);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--hhh-logo-left-olive);
+    }
+    h1, h2, h3, .serif {
+      font-family: var(--hhh-font-display);
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: var(--hhh-wordmark-ink);
+    }
+    h1 em, h2 em, h3 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--hhh-logo-left-olive);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* 1. HERO SECTION */
+    .hero-section {
+      padding: 64px 0 56px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-section { padding: 40px 0; }
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 4.3vw, 4.1rem);
+      line-height: 1.07;
+      margin-bottom: 22px;
+      max-width: 19ch;
+    }
+    .hero-lead {
+      font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--hhh-neutral-700);
+      max-width: 56ch;
+      margin-bottom: 32px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .hero-reassurance {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--hhh-neutral-200);
+      font-size: 15px;
+      color: var(--hhh-neutral-700);
+    }
+    .hero-reassurance img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--hhh-logo-right-sage);
+      flex-shrink: 0;
+    }
+
+    /* Hero Right Visual Collage */
+    .hero-visual {
+      position: relative;
+    }
+    .hero-photo-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--hhh-neutral-200);
+      box-shadow: 0 24px 48px rgba(20, 38, 24, 0.09);
+      aspect-ratio: 4 / 3.4;
+      background: var(--hhh-surface-meadow);
+    }
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .floating-update-card {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      max-width: 350px;
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-left: 4px solid var(--hhh-logo-left-olive);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 16px 36px rgba(20, 38, 24, 0.12);
+    }
+    @media (max-width: 640px) {
+      .floating-update-card {
+        position: static;
+        margin-top: 16px;
+        max-width: 100%;
+      }
+    }
+    .update-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--hhh-logo-left-olive);
+      margin-bottom: 6px;
+    }
+    .update-body {
+      font-size: 14px;
+      line-height: 1.48;
+      color: var(--hhh-wordmark-ink);
+    }
+
+    /* Trust Pillar Strip */
+    .trust-strip {
+      background: var(--hhh-surface-meadow);
+      border-top: 1px solid var(--hhh-olive-200);
+      border-bottom: 1px solid var(--hhh-olive-200);
+      padding: 26px 0;
+      margin-top: 28px;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+    .trust-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .trust-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--hhh-logo-left-olive);
+      color: #FAFBF8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 15.5px;
+      color: var(--hhh-wordmark-ink);
+      margin-bottom: 2px;
+    }
+    .trust-item span {
+      font-size: 14px;
+      color: var(--hhh-neutral-700);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* 2. SOUND FAMILIAR? (EMPATHY FOR ADULT CHILDREN) */
+    .section {
+      padding: 88px 0;
+    }
+    .section-meadow {
+      background: var(--hhh-neutral-100);
+      border-top: 1px solid var(--hhh-neutral-200);
+      border-bottom: 1px solid var(--hhh-neutral-200);
+    }
+    .section-dark {
+      background: var(--hhh-surface-dark);
+      color: #FAFBF8;
+    }
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.2vw, 2.85rem);
+      line-height: 1.13;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 19px;
+      color: var(--hhh-neutral-700);
+      line-height: 1.6;
+    }
+
+    .empathy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .empathy-grid { grid-template-columns: 1fr; }
+    }
+    .question-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .q-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+      font-family: var(--hhh-font-display);
+      font-size: 22px;
+      line-height: 1.32;
+      color: var(--hhh-wordmark-ink);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 6px 20px rgba(20, 38, 24, 0.04);
+    }
+    .q-card span.q-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--hhh-surface-meadow);
+      color: var(--hhh-logo-left-olive);
+      font-family: var(--hhh-font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bridge-box {
+      background: var(--hhh-surface-dark);
+      color: #FAFBF8;
+      border-radius: 24px;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .bridge-box h3 {
+      color: #FAFBF8;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    .bridge-box h3 em {
+      color: #9CC39B;
+    }
+    .bridge-box p {
+      color: #E6F0E4;
+      font-size: 18px;
+      line-height: 1.62;
+    }
+
+    /* 3. THREE OUTCOMES + HOW WE HELP (AT HOME & OUT IN WATERLOO REGION) */
+    .outcomes-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 900px) {
+      .outcomes-row { grid-template-columns: 1fr; }
+    }
+    .outcome-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .outcome-num {
+      font-family: var(--hhh-font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--hhh-logo-left-olive);
+      background: var(--hhh-surface-meadow);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .outcome-card h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .outcome-card p {
+      color: var(--hhh-neutral-700);
+      font-size: 17.5px;
+    }
+
+    .services-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 900px) {
+      .services-split { grid-template-columns: 1fr; }
+    }
+    .service-column {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 22px;
+      padding: 36px;
+    }
+    .service-column.meadow-col {
+      background: var(--hhh-surface-meadow);
+      border-color: var(--hhh-olive-200);
+    }
+    .service-column h3 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+    .service-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(20, 38, 24, 0.08);
+    }
+    .service-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .s-check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--hhh-logo-left-olive);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .service-list strong {
+      display: block;
+      font-size: 18px;
+      color: var(--hhh-wordmark-ink);
+      margin-bottom: 2px;
+    }
+    .service-list span {
+      font-size: 16.5px;
+      color: var(--hhh-neutral-700);
+    }
+
+    /* 4. CORE CUSTOMER-NEED TABS */
+    .need-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .need-tab-btn {
+      background: #FFFFFF;
+      border: 1.5px solid var(--hhh-neutral-300);
+      color: var(--hhh-wordmark-ink);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-family: var(--hhh-font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .need-tab-btn.active {
+      background: var(--hhh-logo-left-olive);
+      color: #FAFBF8;
+      border-color: var(--hhh-logo-left-olive);
+    }
+    .need-panel {
+      display: none;
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 24px;
+      padding: 42px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .need-panel.active {
+      display: grid;
+    }
+    @media (max-width: 900px) {
+      .need-panel.active { grid-template-columns: 1fr; padding: 28px; }
+    }
+    .need-panel h3 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .need-panel p {
+      color: var(--hhh-neutral-700);
+      margin-bottom: 18px;
+    }
+    .need-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .need-bullets li {
+      font-size: 16.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .need-bullets li::before {
+      content: "✓";
+      color: var(--hhh-logo-left-olive);
+      font-weight: 700;
+    }
+    .need-callout {
+      background: var(--hhh-surface-meadow);
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid var(--hhh-olive-200);
+    }
+
+    /* 5. MEET ANDY MCMURDO & 4 SERVICE STANDARDS */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 940px) {
+      .founder-grid { grid-template-columns: 1fr; }
+    }
+    .founder-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(20, 38, 24, 0.06);
+    }
+    .founder-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1.02;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .founder-card-caption {
+      padding: 24px 28px;
+      background: var(--hhh-surface-meadow);
+    }
+    .founder-card-caption h3 {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+    .founder-card-caption p {
+      font-size: 15px;
+      color: var(--hhh-neutral-700);
+    }
+    .standards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    @media (max-width: 640px) {
+      .standards-grid { grid-template-columns: 1fr; }
+    }
+    .standard-box {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .standard-box strong {
+      display: block;
+      font-family: var(--hhh-font-display);
+      font-size: 22px;
+      color: var(--hhh-logo-left-olive);
+      margin-bottom: 6px;
+    }
+    .standard-box p {
+      font-size: 15.5px;
+      color: var(--hhh-neutral-700);
+      line-height: 1.5;
+    }
+
+    /* 6. REAL FAMILY TESTIMONIALS (ALL 6 FROM HERHELPINGHAND.COM) */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .filter-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-300);
+      color: var(--hhh-wordmark-ink);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .filter-pill.active {
+      background: var(--hhh-logo-left-olive);
+      color: #FFFFFF;
+      border-color: var(--hhh-logo-left-olive);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    .story-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 8px 24px rgba(20, 38, 24, 0.04);
+    }
+    .story-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--hhh-logo-left-olive);
+      background: var(--hhh-surface-meadow);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .story-quote {
+      font-size: 17px;
+      line-height: 1.62;
+      color: var(--hhh-wordmark-ink);
+    }
+    .story-author {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--hhh-neutral-700);
+      padding-top: 14px;
+      border-top: 1px solid var(--hhh-neutral-200);
+    }
+
+    /* 7. HOW IT WORKS (5 STEPS) */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 1024px) {
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+    .step-card {
+      background: rgba(250, 251, 248, 0.07);
+      border: 1px solid rgba(230, 240, 228, 0.18);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .step-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #639A67;
+      color: #142618;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      color: #FAFBF8;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      color: #C8DEC5;
+      font-size: 15.5px;
+      line-height: 1.5;
+    }
+
+    /* 8. CONSULTATION INTAKE FORM & HELPER RECRUITMENT */
+    .consult-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 920px) {
+      .consult-grid { grid-template-columns: 1fr; }
+    }
+    .form-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hhh-neutral-200);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 16px 40px rgba(20, 38, 24, 0.06);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--hhh-wordmark-ink);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      font-family: var(--hhh-font-sans);
+      font-size: 16px;
+      border: 1.5px solid var(--hhh-neutral-300);
+      border-radius: 12px;
+      background: #FAFBF8;
+      color: var(--hhh-wordmark-ink);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--hhh-logo-left-olive);
+      background: #FFFFFF;
+    }
+
+    /* Careers Banner */
+    .careers-card {
+      background: var(--hhh-surface-meadow);
+      border: 1px solid var(--hhh-olive-200);
+      border-radius: 24px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .careers-card { grid-template-columns: 1fr; padding: 28px; }
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #142618;
+      color: #E6F0E4;
+      padding: 72px 0 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(230, 240, 228, 0.14);
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-col h4 {
+      font-family: var(--hhh-font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9CC39B;
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: #E6F0E4;
+      text-decoration: none;
+      font-size: 15.5px;
+    }
+    .footer-col a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EXECUTIVE PREVIEW BAR FOR GEOFF & ANDY -->
+  <div class="exec-preview-bar" id="execPreviewBar">
+    <div class="exec-left">
+      <span class="exec-badge">Geoff &amp; Andy Preview</span>
+      <span><strong>Her Helping Hand</strong> · New Website + Locked <code>C8</code> Brand &amp; <code>F05</code> Type System</span>
+    </div>
+    <div class="exec-tabs">
+      <a class="exec-tab active" href="index.html">1. Live Website Preview</a>
+      <a class="exec-tab" href="brand.html">2. C8 Brand Identity &amp; Logo Hub</a>
+      <a class="exec-tab" href="fonts.html">3. F05 Font &amp; Wordmark Studio</a>
+      <button class="exec-hide-btn" onclick="document.getElementById('execPreviewBar').classList.add('hidden')">Hide Bar ×</button>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand-link" href="#">
+        <img src="logos/svg/her-helping-hand-logo-horizontal.svg" alt="Her Helping Hand — Waterloo Region Senior Companionship" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-we-help">How We Help</a></li>
+        <li><a href="#family-needs">By Family Need</a></li>
+        <li><a href="#meet-andy">Meet Andy</a></li>
+        <li><a href="#family-stories">Family Stories</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#work-with-us">Join Our Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="tel:2263390680">Call 226-339-0680</a>
+        <a class="btn btn-primary" href="#book-consultation">Book a Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Serving Waterloo · Kitchener · St. Jacobs · Elmira
+          </div>
+          <h1 class="hero-title">
+            Meaningful companionship for your loved one. <em>Greater peace of mind</em> for you.
+          </h1>
+          <p class="hero-lead">
+            Personalized companionship and everyday home support for older adults in Waterloo Region—built around their interests, independence, and favourite routines.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#book-consultation">Book a Complimentary Consultation</a>
+            <a class="btn btn-secondary" href="#how-we-help">Explore How We Help</a>
+          </div>
+          <div class="hero-reassurance">
+            <img src="assets/images/andy-mcmurdo-founder.jpg" alt="Andy McMurdo, Founder of Her Helping Hand" />
+            <div>
+              <strong style="color:var(--hhh-wordmark-ink);">Locally owned &amp; personally led by Andy McMurdo</strong><br/>
+              <span>“We care for our clients as we would for our own family—matching your parent with the same trusted, familiar companion every week.”</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-frame">
+            <img src="assets/images/hero-companionship.jpg" alt="Warm senior companionship and conversation over chess at home in Waterloo" />
+          </div>
+          <div class="floating-update-card">
+            <div class="update-header">
+              <span>✓ Post-Visit Family Note</span>
+              <span>Tues · 2:30 PM</span>
+            </div>
+            <div class="update-body">
+              “Mom had a wonderful morning! We walked for 25 minutes in Waterloo Park, picked up fresh strawberries, ate a hot lunch together, and played two hands of rummy.”
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST PILLAR STRIP -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">1</div>
+            <div>
+              <strong>Locally Owned by Andy McMurdo</strong>
+              <span>Direct, personal care leadership right here in Waterloo Region.</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">2</div>
+            <div>
+              <strong>Consistent, Familiar Faces</strong>
+              <span>Never a revolving door of strangers—your parent builds a real bond.</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">3</div>
+            <div>
+              <strong>Agreed-Upon Family Updates</strong>
+              <span>Thoughtful post-visit check-ins so adult children feel informed &amp; reassured.</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">4</div>
+            <div>
+              <strong>Flexible Weekly Visits</strong>
+              <span>Start comfortably with 1 or 2 visits a week—no high-pressure lock-in.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SOUND FAMILIAR? (EMPATHY FOR ADULT CHILDREN) -->
+  <section class="section section-meadow">
+    <div class="container">
+      <div class="empathy-grid">
+        <div>
+          <div class="eyebrow">For Sons, Daughters &amp; Spouses</div>
+          <h2 class="section-title">
+            When you love an aging parent, the hardest part is <em>what happens between your visits.</em>
+          </h2>
+          <p class="section-subtitle" style="margin-bottom: 28px;">
+            You’re juggling work, your own household, and constant concern for a parent in their 80s or 90s. Even when you visit as often as you can, it’s hard not to wonder:
+          </p>
+          <div class="question-cards">
+            <div class="q-card">
+              <span class="q-mark">?</span>
+              <span>“Is Mom lonely spending long afternoons sitting by herself?”</span>
+            </div>
+            <div class="q-card">
+              <span class="q-mark">?</span>
+              <span>“Is Dad actually cooking and eating proper, nutritious meals?”</span>
+            </div>
+            <div class="q-card">
+              <span class="q-mark">?</span>
+              <span>“Will my parent accept help—or feel like we’re taking away their independence?”</span>
+            </div>
+            <div class="q-card">
+              <span class="q-mark">?</span>
+              <span>“How can I catch my breath or travel for winter without feeling guilty?”</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bridge-box">
+          <div>
+            <div class="eyebrow" style="background:rgba(255,255,255,0.12); color:#E6F0E4;">The Warm First Step</div>
+            <h3>
+              Not every family needs clinical nursing. Often, what changes everything is <em>a trusted friend who looks forward to visiting.</em>
+            </h3>
+          </div>
+          <p>
+            Calling a clinical home-care agency can make a proud parent feel like they are “losing independence.” Welcoming a warm companion from <strong>Her Helping Hand</strong> to bake together, tend the garden, head out for coffee in St. Jacobs, or run groceries feels like <strong>adding to their life</strong>.
+          </p>
+          <div style="border-top: 1px solid rgba(230,240,228,0.18); padding-top: 20px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between;">
+            <span style="font-size:15px; color:#C8DEC5;">Have a parent who resists help? Ask Andy how we introduce visits gently.</span>
+            <a class="btn btn-secondary" href="#book-consultation">Talk With Andy →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOW WE HELP (AT HOME & OUT IN WATERLOO REGION) -->
+  <section class="section" id="how-we-help">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">How We Help</div>
+        <h2 class="section-title">
+          Customizable support around the home <em>and out in the community.</em>
+        </h2>
+        <p class="section-subtitle">
+          Every visit combines genuine social connection with practical everyday help—so your parent stays active, stimulated, and proud of their home.
+        </p>
+      </div>
+
+      <div class="outcomes-row">
+        <div class="outcome-card">
+          <span class="outcome-num">OUTCOME 01</span>
+          <h3>More Meaningful Days</h3>
+          <p>Conversation, music, cards, gin rummy, puzzles, walks in the park, and social outings tailored to who your parent is—never just “filling time.”</p>
+        </div>
+        <div class="outcome-card">
+          <span class="outcome-num">OUTCOME 02</span>
+          <h3>Support That Respects Independence</h3>
+          <p>Practical help with meals, groceries, gardening, laundry, and errands that works <em>with</em> your parent’s favourite routines, not against them.</p>
+        </div>
+        <div class="outcome-card">
+          <span class="outcome-num">OUTCOME 03</span>
+          <h3>Real Reassurance for Your Family</h3>
+          <p>A consistent companion and agreed-upon communication after visits so you know how Mom or Dad is eating, feeling, and thriving.</p>
+        </div>
+      </div>
+
+      <div class="services-split">
+        <!-- At Home Together -->
+        <div class="service-column">
+          <div class="eyebrow">At Home Together</div>
+          <h3>Comfort, Meals &amp; Conversation</h3>
+          <p style="color:var(--hhh-neutral-700); font-size:16.5px;">We help keep home comfortable, lively, and well-stocked while sharing unhurried company.</p>
+          <ul class="service-list">
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Companionship &amp; Conversation</strong>
+                <span>Sharing stories, playing cards or gin rummy, listening to music, puzzles, reading, and warm friendship.</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Meal Preparation &amp; Baking</strong>
+                <span>Chopping, dicing, boiling, blending, baking—helping in the kitchen and encouraging healthy, enjoyable mealtimes.</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Laundry &amp; Light Household Upkeep</strong>
+                <span>Washing, folding just right, changing linens, tidying, and keeping everyday living spaces fresh and safe.</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Gardening &amp; Yard Enjoyment</strong>
+                <span>Getting outside together to water, weed, plant, rake, and enjoy fresh air in the yard.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Out & About in Waterloo Region -->
+        <div class="service-column meadow-col">
+          <div class="eyebrow" style="background:#FFFFFF;">Out &amp; About in Waterloo Region</div>
+          <h3>Staying Active &amp; Connected</h3>
+          <p style="color:var(--hhh-neutral-700); font-size:16.5px;">We help older adults get out of the house, run errands safely, and stay engaged with the community and friends they love.</p>
+          <ul class="service-list">
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Walks in the Park, Trails &amp; Winter Mall Walks</strong>
+                <span>A stroll in Waterloo Park, a forest trail walk with the dog, or indoor mall walking on a cold winter day—happy to pick up a friend along the way!</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Dining Out &amp; Coffee Visits</strong>
+                <span>Lunch at Tim’s after a hair appointment, visiting a lifelong friend, or heading out for a favourite local meal.</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Grocery Shopping &amp; Errands</strong>
+                <span>Keeping the cupboards full by accompanying your parent to the market or picking up groceries and prescriptions.</span>
+              </div>
+            </li>
+            <li>
+              <span class="s-check">✓</span>
+              <div>
+                <strong>Appointments &amp; Grandkids’ Special Moments</strong>
+                <span>Doctor, dental, or lab visits—plus getting to a grandson’s hockey game or granddaughter’s music recital so they never miss precious family moments.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. INTERACTIVE CUSTOMER-NEED PATHWAYS -->
+  <section class="section section-meadow" id="family-needs">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Tailored to Your Family’s Situation</div>
+        <h2 class="section-title">
+          Every family comes to us at a <em>different moment.</em>
+        </h2>
+        <p class="section-subtitle">
+          Select the situation that feels closest to your family right now to see how Andy and our helpers tailor support:
+        </p>
+      </div>
+
+      <div class="need-tabs-nav">
+        <button class="need-tab-btn active" onclick="showNeedTab('need-alone', this)">1. Parent Living Alone / Lonely</button>
+        <button class="need-tab-btn" onclick="showNeedTab('need-reluctant', this)">2. Warming Up a Reluctant Parent</button>
+        <button class="need-tab-btn" onclick="showNeedTab('need-dementia', this)">3. Dementia-Friendly Companionship</button>
+        <button class="need-tab-btn" onclick="showNeedTab('need-respite', this)">4. Family Caregiver Respite &amp; Travel</button>
+      </div>
+
+      <!-- Tab 1 -->
+      <div class="need-panel active" id="need-alone">
+        <div>
+          <span class="story-tag">Seniors Living Alone · Waterloo, Kitchener, St. Jacobs &amp; Elmira</span>
+          <h3>Turning quiet, isolated weeks into something your parent looks forward to.</h3>
+          <p>
+            After losing a spouse, giving up driving, or seeing friends move away, days at home or in a retirement suite can become painfully quiet. Regular weekly visits restore rhythm, laughter, better nutrition, and community connection.
+          </p>
+          <ul class="need-bullets">
+            <li>Consistent weekly schedule with the same warm helper (and trusted backup like Marcia or Paula)</li>
+            <li>Shared mealtime visits to encourage healthy eating and hydration</li>
+            <li>Outings for coffee, walks, groceries, and visiting friends</li>
+          </ul>
+          <a class="btn btn-primary" href="#book-consultation">Plan a Weekly Visit Routine</a>
+        </div>
+        <div class="need-callout">
+          <img src="assets/images/services-outings.jpg" alt="Senior gardening and staying active" style="width:100%; height:210px; object-fit:cover; border-radius:12px; margin-bottom:16px;" />
+          <strong style="display:block; font-family:var(--hhh-font-display); font-size:21px; margin-bottom:6px;">Clear Scope You Can Trust</strong>
+          <p style="font-size:15px; margin-bottom:0;">
+            We specialize in non-medical companionship, active living, meal prep, errands, and household support (typically 3 to 20 hours/week). When heavy clinical nursing or 2-person mechanical lifts are needed, we coordinate transparently with local clinical providers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div class="need-panel" id="need-reluctant">
+        <div>
+          <span class="story-tag">The “I Don’t Need Help!” Parent</span>
+          <h3>How we help proud older adults welcome a companion—without feeling “managed.”</h3>
+          <p>
+            Many 85- and 90-year-olds tell their children: <em>“I don’t want a stranger in my house looking after me.”</em> That’s why we never show up acting like clinical supervisors. We start around an activity your parent genuinely enjoys—gardening, baking, a drive for coffee, or help organizing the house.
+          </p>
+          <ul class="need-bullets">
+            <li>Start small with a low-pressure half-day or single weekly visit</li>
+            <li>Framed around shared interests, household partnership, or a ride to errands</li>
+            <li>Families frequently expand from 1 visit/week to 2–3 visits/week once their parent falls in love with their companion</li>
+          </ul>
+          <a class="btn btn-primary" href="#book-consultation">Ask Andy About a Gentle Introduction</a>
+        </div>
+        <div class="need-callout">
+          <div class="story-tag" style="background:#FFFFFF;">Real KW Client Story</div>
+          <p style="font-family:var(--hhh-font-display); font-size:20px; color:var(--hhh-wordmark-ink); line-height:1.45;">
+            “We are a 90 and 85-year-old couple… Andy McMurdo started with a half day/week assisting us in so many ways. After getting to know Andy we increased her time to 2 mornings a week. We look forward to every visit.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div class="need-panel" id="need-dementia">
+        <div>
+          <span class="story-tag">Dementia-Friendly Engagement</span>
+          <h3>Gentle familiarity, music, patience, and calm routines.</h3>
+          <p>
+            For a parent living with memory loss or dementia, rotating agency staff creates confusion and anxiety. Our approach centers on emotional warmth, familiar faces, favourite music, unhurried walks, and meeting your loved one right where they are each day.
+          </p>
+          <ul class="need-bullets">
+            <li>Music videos, favourite songs, coffee chats, cards, and gentle walks</li>
+            <li>Attentive observation of appetite, mood, and daily wellbeing shared with family</li>
+            <li>Flexible accompaniment to short-notice doctor or lab appointments</li>
+          </ul>
+          <a class="btn btn-primary" href="#book-consultation">Discuss Dementia-Friendly Support</a>
+        </div>
+        <div class="need-callout">
+          <div class="story-tag" style="background:#FFFFFF;">Real Family Outcome</div>
+          <p style="font-family:var(--hhh-font-display); font-size:20px; color:var(--hhh-wordmark-ink); line-height:1.45;">
+            “Mom has dementia and isn’t very welcoming of new people so we warned Andy… Things went so well indeed that Mom smiles when she talks about ‘that nice lady Andy who listens to music with me and brings me a coffee.’”
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 4 -->
+      <div class="need-panel" id="need-respite">
+        <div>
+          <span class="story-tag">Support for Adult Children &amp; Snowbirds</span>
+          <h3>Dependable eyes, ears, and warmth when you can’t be there every day.</h3>
+          <p>
+            Whether you work full-time in Kitchener-Waterloo, live out of town, or head south for the winter, we act as your trusted local extension—keeping your parent company and keeping you thoughtfully updated after visits.
+          </p>
+          <ul class="need-bullets">
+            <li>Pre-trip transition visits so your parent is comfortable before you travel</li>
+            <li>Proactive schedule adjustments around mealtime or special appointments</li>
+            <li>Agreed-upon family updates so you always have peace of mind</li>
+          </ul>
+          <a class="btn btn-primary" href="#book-consultation">Set Up Family Reassurance Visits</a>
+        </div>
+        <div class="need-callout">
+          <div class="story-tag" style="background:#FFFFFF;">Real Family Outcome</div>
+          <p style="font-family:var(--hhh-font-display); font-size:20px; color:var(--hhh-wordmark-ink); line-height:1.45;">
+            “I was getting ready to head south for the winter and worried about leaving Mom that long. Her Helping Hand started visiting her before I left and it worked so well I knew Mom would be in good hands and I would have someone to keep me up to date.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MEET ANDY MCMURDO & OUR 4 SERVICE STANDARDS -->
+  <section class="section" id="meet-andy">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-card">
+          <img src="assets/images/andy-mcmurdo-founder.jpg" alt="Andy McMurdo — Founder of Her Helping Hand in Waterloo, Ontario" />
+          <div class="founder-card-caption">
+            <h3>Andy McMurdo</h3>
+            <p>Founder &amp; Companion Care Leader · Waterloo, Ontario</p>
+            <p style="margin-top:8px; font-size:14px;">Western University (UWO) Graduate · Former Meals on Wheels Senior Fitness Instructor</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="eyebrow">Meet Our Leader</div>
+          <h2 class="section-title">
+            Personal, owner-led care—<em>never a revolving door of strangers.</em>
+          </h2>
+          <p style="margin-bottom:16px; color:var(--hhh-neutral-700);">
+            Andy graduated from <strong>Western University (UWO)</strong> and began her career in corporate sales at Coca-Cola, where she loved the lasting relationships she formed with clients. After leaving the corporate world to raise her three children, Andy launched <strong>Her Helping Hand</strong> to bring warm, relationship-first companionship to older adults across Waterloo Region.
+          </p>
+          <p style="margin-bottom:16px; color:var(--hhh-neutral-700);">
+            Andy is a caregiver by nature. As a young adult, she loved visiting her grandma out of town to hear stories of her childhood in the early 1900s. When her Nanny passed away, Andy moved in with her Pops to help around the house, prepare meals, play gin rummy, and keep him company. A longtime volunteer senior fitness instructor with <strong>Meals on Wheels</strong>, Andy lives in Waterloo with her husband Geoff, their three children, dog, and two cats.
+          </p>
+
+          <h3 style="font-size:26px; margin-top:28px;">Our 4 Codified Service Standards</h3>
+          <div class="standards-grid">
+            <div class="standard-box">
+              <strong>1. Personal Fit First</strong>
+              <p>We learn about your loved one’s personality, life history, and interests before visits ever begin.</p>
+            </div>
+            <div class="standard-box">
+              <strong>2. Companion Continuity</strong>
+              <p>We prioritize matching your parent with a consistent, familiar companion they genuinely look forward to seeing.</p>
+            </div>
+            <div class="standard-box">
+              <strong>3. Family Communication</strong>
+              <p>With your parent’s consent, we agree in advance on how and when you receive post-visit updates and observations.</p>
+            </div>
+            <div class="standard-box">
+              <strong>4. Reliable Scheduling</strong>
+              <p>Clear visit confirmations and warm, trusted team continuity if schedules ever need to adjust.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CATEGORIZED FAMILY STORIES (ALL 6 REAL TESTIMONIALS) -->
+  <section class="section section-meadow" id="family-stories">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Waterloo Region Family Stories</div>
+        <h2 class="section-title">
+          Why families across KW call Andy &amp; her team <em>“a gift.”</em>
+        </h2>
+        <p class="section-subtitle">
+          Read real stories from older adults, sons, and daughters in Waterloo Region—organized by what mattered most to their family.
+        </p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-pill active" onclick="filterStories('all', this)">All 6 Family Stories</button>
+        <button class="filter-pill" onclick="filterStories('dementia', this)">Dementia-Friendly Warmth</button>
+        <button class="filter-pill" onclick="filterStories('loneliness', this)">Overcoming Loneliness</button>
+        <button class="filter-pill" onclick="filterStories('couple', this)">Independent Couples (85–90+)</button>
+        <button class="filter-pill" onclick="filterStories('winter', this)">Peace of Mind While Away</button>
+      </div>
+
+      <div class="testimonials-grid" id="storiesGrid">
+        <!-- Story 1 -->
+        <article class="story-card" data-cat="dementia">
+          <div>
+            <span class="story-tag">Dementia-Friendly Engagement &amp; Extra Mile</span>
+            <p class="story-quote">
+              “Andy and ‘Her Helping Hand’ are a gift! Compassion, skill, knowledge, and spirit are the cornerstones of her approach to supporting Mom, and by extension our whole family. Mom adores Andy and enjoys every single moment that they spend together — shopping, chatting, lunching, playing cards, watching music videos… and that would be enough! However, she can always be found on the extra mile… switching up her schedule to take Mom to a special appointment, making short-notice doctor or lab visits, checking for signs of good eating, or passing on information and ideas about other and better ways to support Mom in her advancing dementia. Simply — Andy is family. We are so very grateful for the day a friend said, ‘Do you know about Her Helping Hand?’”
+            </p>
+          </div>
+          <div class="story-author">— Daughter of Client Living with Dementia · Waterloo Region</div>
+        </article>
+
+        <!-- Story 2 -->
+        <article class="story-card" data-cat="couple">
+          <div>
+            <span class="story-tag">Independent 90 &amp; 85-Year-Old Couple</span>
+            <p class="story-quote">
+              “We are a 90 and 85-year-old couple blessed with 6 children and 16 grandchildren, with many of us in the medical profession mainly living in KW. We are so happy to be living in our home but we recognized that we could use some help. Andy McMurdo started with a half day/week assisting us in so many ways. After getting to know Andy we increased her time to 2 mornings a week. Andy is professional, very knowledgeable about the world and our community, knows how to manage a household, and is incredibly efficient. Andy knows how to ‘get things done’ and is always so pleasant, full of life and willing to do anything we ask. She is a very capable, vibrant and engaging woman with an obvious passion for Seniors and our special needs. But the most outstanding attribute Andy possesses is her compassion. We look forward to every visit with Andy.”
+            </p>
+          </div>
+          <div class="story-author">— 90 &amp; 85-Year-Old Couple (Medical Family) · Kitchener-Waterloo</div>
+        </article>
+
+        <!-- Story 3 -->
+        <article class="story-card" data-cat="dementia">
+          <div>
+            <span class="story-tag">Warming Up a Reluctant Parent After Loss</span>
+            <p class="story-quote">
+              “Since our father passed away, our mom began to withdraw and show signs of depression. We knew we couldn’t be with her all the time so sought out Andy and her team to help sit with mom for conversation or anything else mom may need. Mom has dementia and isn’t very welcoming of new people so we warned Andy and hoped everything would go smoothly. Things went so well indeed that Mom smiles when she talks about ‘that nice lady Andy who listens to music with me and brings me a coffee.’ Andy’s gentle personality makes it easy to see why people are comforted by her and love having her around. We are so thankful for Andy and her staff, it’s such peace of mind knowing Mom is not lonely when Andy and her staff are with her and we can feel good knowing she is looked after.”
+            </p>
+          </div>
+          <div class="story-author">— Family of Senior Client · Waterloo Region</div>
+        </article>
+
+        <!-- Story 4 -->
+        <article class="story-card" data-cat="winter">
+          <div>
+            <span class="story-tag">Peace of Mind While Away for Winter &amp; Mealtime Support</span>
+            <p class="story-quote">
+              “I first met Andy through a team member over a year ago who happened to be visiting someone on Mom’s floor. I was getting ready to head south for the winter and worried about leaving Mom that long. Her Helping Hand started visiting her before I left and it worked so well I knew Mom would be in good hands and I would have someone to keep me up to date. Paula has changed her schedule to accommodate Mom over mealtime to encourage her to eat and is working well. She has become a friend to her and also me. Andy and her team have given me peace of mind and companionship for Mom along with smiles, music, activities, and offers to help in any way they can. You are all very special people. Thank you!!!!!”
+            </p>
+          </div>
+          <div class="story-author">— Daughter of Retirement Residence Client · Waterloo Region</div>
+        </article>
+
+        <!-- Story 5 -->
+        <article class="story-card" data-cat="loneliness">
+          <div>
+            <span class="story-tag">Weekly Socialization &amp; Trusted Team Continuity</span>
+            <p class="story-quote">
+              “Andy has been seeing my mother on a weekly basis for several months now. She is such a great asset to my mom and to my family, she gives my mom the socialization that she needs as my mom doesn’t get out much and with our busy lives, we can’t get over to see her as often as we’d like to. Andy has hired people she trusts who have the same compassion and friendly demeanour — they truly enjoy spending time with seniors and making a difference in their lives. When Andy is not available, Marcia from Her Helping Hand spends time with Mom, Marcia is another great ‘Helping Hand’. My mom is very appreciative and happy to see them when they visit – it lifts her spirits and breaks up her days just sitting around by herself. Andy and Marcia have made an impact on my mom’s life and we are forever grateful for Her Helping Hand.”
+            </p>
+          </div>
+          <div class="story-author">— Adult Child of Weekly Companion Client · Waterloo Region</div>
+        </article>
+
+        <!-- Story 6 -->
+        <article class="story-card" data-cat="loneliness">
+          <div>
+            <span class="story-tag">In a Client’s Own Words</span>
+            <p class="story-quote" style="font-family:var(--hhh-font-display); font-size:26px; line-height:1.35;">
+              “First of all, I want to keep all of Andy’s time for myself and I hope no one hears of her services. I knew by week two she was the optimum caregiver for me!”
+            </p>
+          </div>
+          <div class="story-author">— Her Helping Hand Companion Client · Waterloo, ON</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW GETTING STARTED WORKS (5 SIMPLE STEPS) -->
+  <section class="section section-dark" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" style="background:rgba(255,255,255,0.12); color:#E6F0E4;">Simple, Unhurried Process</div>
+        <h2 class="section-title" style="color:#FAFBF8;">
+          How getting started works in <em style="color:#9CC39B;">5 simple steps.</em>
+        </h2>
+        <p class="section-subtitle" style="color:#C8DEC5;">
+          No clinical red tape or high-pressure contracts. We start at a pace that feels completely natural for your parent.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-badge">1</div>
+          <h3>Let’s Talk</h3>
+          <p>A relaxed, complimentary phone or in-home conversation with Andy about your parent and your family’s situation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">2</div>
+          <h3>Understand the Person</h3>
+          <p>We learn about your loved one’s life story, favourite routines, hobbies, meal preferences, and practical needs.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">3</div>
+          <h3>Match the Right Fit</h3>
+          <p>We select a warm companion and visit rhythm tailored specifically to your parent’s personality.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">4</div>
+          <h3>Start Comfortably</h3>
+          <p>Begin with a gentle routine (even one or two mornings/afternoons a week) and set up post-visit family updates.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">5</div>
+          <h3>Grow Together</h3>
+          <p>We check in regularly and adjust visit hours or activities naturally as your family’s needs evolve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. BOOK A COMPLIMENTARY CONSULTATION -->
+  <section class="section" id="book-consultation">
+    <div class="container">
+      <div class="consult-grid">
+        <div>
+          <div class="eyebrow">Complimentary Family Consultation</div>
+          <h2 class="section-title">
+            Let’s have a warm, <em>no-pressure conversation</em> about your parent.
+          </h2>
+          <p class="section-subtitle" style="margin-bottom:28px;">
+            Whether you’re ready to start weekly visits right away or simply figuring out how to broach the topic with a reluctant parent, Andy would love to speak with you.
+          </p>
+
+          <div style="background:var(--hhh-surface-meadow); border:1px solid var(--hhh-olive-200); border-radius:20px; padding:28px; margin-bottom:24px;">
+            <strong style="display:block; font-family:var(--hhh-font-display); font-size:24px; margin-bottom:10px;">Prefer to call or email Andy directly?</strong>
+            <p style="font-size:16.5px; color:var(--hhh-neutral-700); margin-bottom:16px;">
+              We respond promptly to all family inquiries across Waterloo, Kitchener, St. Jacobs, and Elmira.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:17px;">
+              <div><strong>Phone:</strong> <a href="tel:2263390680" style="color:var(--hhh-logo-left-olive); font-weight:700; text-decoration:none;">226-339-0680</a></div>
+              <div><strong>Email:</strong> <a href="mailto:helpinghand.her@gmail.com" style="color:var(--hhh-logo-left-olive); font-weight:600; text-decoration:none;">helpinghand.her@gmail.com</a></div>
+              <div><strong>Service Area:</strong> Waterloo, Kitchener, St. Jacobs &amp; Elmira, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3 style="font-size:28px; margin-bottom:6px;">Request a Complimentary Consultation</h3>
+          <p style="font-size:15.5px; color:var(--hhh-neutral-700); margin-bottom:24px;">
+            Fill out the brief note below and Andy will reach out personally within one business day.
+          </p>
+
+          <form id="consultationForm" onsubmit="handleConsultSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fName">Your Name *</label>
+                <input type="text" id="fName" name="name" required placeholder="e.g., Sarah Miller" />
+              </div>
+              <div class="form-group">
+                <label for="fPhone">Phone Number *</label>
+                <input type="tel" id="fPhone" name="phone" required placeholder="e.g., 519-555-0192" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fEmail">Email Address *</label>
+                <input type="email" id="fEmail" name="email" required placeholder="you@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="fCity">Loved One’s Community *</label>
+                <select id="fCity" name="community" required>
+                  <option value="">Select community…</option>
+                  <option value="Waterloo">Waterloo</option>
+                  <option value="Kitchener">Kitchener</option>
+                  <option value="St. Jacobs">St. Jacobs</option>
+                  <option value="Elmira">Elmira</option>
+                  <option value="Cambridge / Other KW">Cambridge / Surrounding Area</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fWho">Who Are You Seeking Support For?</label>
+                <select id="fWho" name="relationship">
+                  <option value="Mother">My Mother</option>
+                  <option value="Father">My Father</option>
+                  <option value="Both Parents">Both Parents (Couple)</option>
+                  <option value="Spouse">My Spouse / Partner</option>
+                  <option value="Myself">Myself</option>
+                  <option value="Other">Another Family Member / Client</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fSource">How Did You Hear About Us?</label>
+                <select id="fSource" name="referral_source">
+                  <option value="">Select one…</option>
+                  <option value="Friend or Family Referral">Friend or Family Referral</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Retirement Residence">Retirement Residence</option>
+                  <option value="Healthcare / OT / Discharge Planner">Healthcare Professional / OT</option>
+                  <option value="Elderella">Elderella</option>
+                  <option value="Community Event">Community Event / Brochure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fNotes">Tell Us a Little About Your Loved One &amp; What Would Help Most</label>
+              <textarea id="fNotes" name="notes" rows="3" placeholder="e.g., Mom lives in Waterloo and would love companionship twice a week for walks, lunch, and light meal prep…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; font-size:16.5px;">
+              Send Consultation Request to Andy
+            </button>
+          </form>
+
+          <div id="consultSuccess" style="display:none; background:var(--hhh-surface-meadow); border:1.5px solid var(--hhh-logo-left-olive); border-radius:16px; padding:24px; margin-top:16px;">
+            <strong style="display:block; font-family:var(--hhh-font-display); font-size:24px; color:var(--hhh-logo-left-olive); margin-bottom:6px;">
+              ✓ Thank you! Your note is ready for Andy.
+            </strong>
+            <p style="font-size:15.5px; color:var(--hhh-wordmark-ink);">
+              We’ve prepared your consultation details. You can also call Andy directly anytime at <strong>226-339-0680</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CAREGIVER / HELPER RECRUITMENT SECTION (/work-with-us) -->
+  <section class="section" id="work-with-us" style="padding-top: 0;">
+    <div class="container">
+      <div class="careers-card">
+        <div>
+          <div class="eyebrow" style="background:#FFFFFF;">Join Our Team · Part-Time Companion Helpers</div>
+          <h2 class="section-title" style="margin-bottom:12px;">
+            Love spending time with older adults? <em>Become a Helping Hand.</em>
+          </h2>
+          <p style="font-size:17.5px; color:var(--hhh-neutral-700); margin-bottom:16px;">
+            We are growing our team of warm, dependable part-time companions across <strong>Waterloo, Kitchener, St. Jacobs, and Elmira</strong>. Ideal for active retirees, empathetic career changers, and caring community members who want meaningful, unhurried 3–4 hour visits with consistent local seniors.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; font-size:14.5px; font-weight:600; color:var(--hhh-logo-left-olive);">
+            <span>✓ Consistent Local Clients</span>
+            <span>·</span>
+            <span>✓ Flexible Daytime Hours (8–15 hrs/wk)</span>
+            <span>·</span>
+            <span>✓ Supportive Owner-Led Team</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a class="btn btn-primary" href="mailto:helpinghand.her@gmail.com?subject=Companion%20Helper%20Application%20%E2%80%94%20Her%20Helping%20Hand">
+            Apply via Email (Send Resume &amp; Note)
+          </a>
+          <span style="font-size:13.5px; color:var(--hhh-neutral-700); text-align:center;">
+            Email <a href="mailto:helpinghand.her@gmail.com" style="color:var(--hhh-logo-left-olive); font-weight:600;">helpinghand.her@gmail.com</a> or call 226-339-0680
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logos/svg/her-helping-hand-mark-inverse-light.svg" alt="Her Helping Hand Mark" style="height:56px; width:auto; margin-bottom:14px;" />
+          <div style="font-family:var(--hhh-font-display); font-size:28px; color:#FAFBF8; margin-bottom:10px;">Her Helping Hand</div>
+          <p style="font-size:15px; color:#C8DEC5; line-height:1.55; margin-bottom:16px;">
+            Meaningful senior companionship and practical everyday support in Waterloo, Kitchener, St. Jacobs, and Elmira. We care for our clients as we would for our own family.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>How We Help</h4>
+          <ul>
+            <li><a href="#how-we-help">At-Home Companionship &amp; Meals</a></li>
+            <li><a href="#how-we-help">Walks, Outings &amp; Errands</a></li>
+            <li><a href="#family-needs">Seniors Living Alone</a></li>
+            <li><a href="#family-needs">Dementia-Friendly Companionship</a></li>
+            <li><a href="#family-needs">Family Caregiver Respite</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Communities Served</h4>
+          <ul>
+            <li><a href="#book-consultation">Waterloo, ON</a></li>
+            <li><a href="#book-consultation">Kitchener, ON</a></li>
+            <li><a href="#book-consultation">St. Jacobs, ON</a></li>
+            <li><a href="#book-consultation">Elmira &amp; Woolwich, ON</a></li>
+            <li><a href="brand.html">Official C8 Brand Identity Hub →</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Andy McMurdo</h4>
+          <ul>
+            <li><a href="tel:2263390680"><strong>226-339-0680</strong></a></li>
+            <li><a href="mailto:helpinghand.her@gmail.com">helpinghand.her@gmail.com</a></li>
+            <li><a href="#book-consultation">Book a Complimentary Consultation</a></li>
+            <li><a href="#work-with-us">Work With Us (Helper Careers)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="padding-top:28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:13.5px; color:#9CC39B;">
+        <span>© 2026 Her Helping Hand · Waterloo, Ontario, Canada. All rights reserved.</span>
+        <span>Brand System: <code>H1</code> Linked Hands Mark · <code>C8</code> Heritage Olive &amp; Soft Meadow · <code>F05</code> Newsreader + Inter</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showNeedTab(panelId, btn) {
+      document.querySelectorAll(".need-panel").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".need-tab-btn").forEach(b => b.classList.remove("active"));
+      document.getElementById(panelId).classList.add("active");
+      btn.classList.add("active");
+    }
+
+    function filterStories(cat, btn) {
+      document.querySelectorAll(".filter-pill").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll("#storiesGrid .story-card").forEach(card => {
+        if (cat === "all" || card.dataset.cat === cat) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function handleConsultSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById("consultationForm");
+      const name = document.getElementById("fName").value;
+      const phone = document.getElementById("fPhone").value;
+      const city = document.getElementById("fCity").value;
+      const who = document.getElementById("fWho").value;
+      const notes = document.getElementById("fNotes").value;
+      document.getElementById("consultSuccess").style.display = "block";
+      const subject = encodeURIComponent(`Complimentary Consultation Request — ${name} (${city})`);
+      const body = encodeURIComponent(`Hi Andy,\n\nI would love to book a complimentary consultation.\n\nName: ${name}\nPhone: ${phone}\nCommunity: ${city}\nSeeking support for: ${who}\nNotes: ${notes}\n`);
+      window.location.href = `mailto:helpinghand.her@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>

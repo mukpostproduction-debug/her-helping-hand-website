@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Helping Hand — Interactive Font & Wordmark Studio (Locked H1 Logo + C8 Colours)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Tenor+Sans&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --olive: #2D5A36;
+      --sage: #639A67;
+      --paper: #FAFBF8;
+      --meadow: #E6F0E4;
+      --dark-olive: #23472B;
+      --ink: #142618;
+
+      --wordmark-font: 'Cormorant Garamond', Georgia, serif;
+      --wordmark-weight: 600;
+      --wordmark-tracking: -0.01em;
+      --wordmark-size: 38px;
+      --wordmark-style: normal;
+
+      --heading-font: 'Cormorant Garamond', Georgia, serif;
+      --body-font: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0d120e;
+      color: #f2f5f2;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 88px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13, 18, 14, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      padding: 14px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(99, 154, 103, 0.2);
+      color: #9CC39B;
+      border: 1px solid rgba(99, 154, 103, 0.45);
+    }
+
+    .container {
+      max-width: 1580px;
+      margin: 0 auto;
+      padding: 24px 32px;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 1120px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+
+    .sidebar {
+      background: #141b16;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 20px;
+      position: sticky;
+      top: 76px;
+      max-height: calc(100vh - 96px);
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #9CC39B;
+      margin-bottom: 10px;
+    }
+
+    .control-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .ctrl-box {
+      background: #1a231c;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    .ctrl-box label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #b7c4ba;
+      margin-bottom: 4px;
+    }
+
+    .ctrl-box select, .ctrl-box input[type="range"] {
+      width: 100%;
+      background: #111712;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 5px 6px;
+      font-size: 12px;
+    }
+
+    .pairing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pairing-btn {
+      background: #1a231c;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 11px 14px;
+      color: #f2f5f2;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.14s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pairing-btn:hover {
+      border-color: rgba(156, 195, 155, 0.5);
+      transform: translateX(2px);
+    }
+
+    .pairing-btn.active {
+      background: rgba(45, 90, 54, 0.36);
+      border-color: #639A67;
+      box-shadow: 0 0 0 1px #639A67;
+    }
+
+    .pairing-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .pairing-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #9CC39B;
+    }
+
+    .pairing-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .pairing-vibe {
+      font-size: 11px;
+      color: #98a69b;
+    }
+
+    .pairing-sample {
+      font-size: 24px;
+      color: #FAFBF8;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Right Panel: Live Bento Stage */
+    .live-stage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      background: #141b16;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .live-stage { grid-template-columns: 1fr; }
+    }
+
+    .stage-tile {
+      border-radius: 14px;
+      padding: 28px 24px;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .tile-paper {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .tile-meadow {
+      background: var(--meadow);
+      color: var(--ink);
+    }
+
+    .tile-dark {
+      background: var(--dark-olive);
+      color: var(--paper);
+    }
+
+    .mark-box {
+      width: 132px;
+      height: 132px;
+      margin-bottom: 10px;
+    }
+
+    .mark-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .live-wordmark {
+      font-family: var(--wordmark-font);
+      font-weight: var(--wordmark-weight);
+      font-size: var(--wordmark-size);
+      letter-spacing: var(--wordmark-tracking);
+      font-style: var(--wordmark-style);
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .live-subhead {
+      font-family: var(--body-font);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--olive);
+      margin-top: 6px;
+    }
+
+    /* Horizontal Navbar Tile */
+    .horiz-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: 12px;
+      border: 1px solid #DCE5D9;
+      box-shadow: 0 8px 24px rgba(20, 38, 24, 0.06);
+      margin-bottom: 18px;
+    }
+
+    .horiz-mark {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+    }
+
+    .horiz-mark svg { width: 100%; height: 100%; display: block; }
+
+    /* All 16 Wordmark Comparison Grid Below */
+    .grid-section-title {
+      margin: 44px 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .grid-section-title h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 32px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 18px;
+    }
+
+    .comp-card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 26px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      position: relative;
+    }
+
+    .comp-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--sage);
+    }
+
+    .comp-card.active {
+      border-color: var(--olive);
+      box-shadow: 0 0 0 3px rgba(45, 90, 54, 0.35);
+    }
+
+    .comp-tag {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--meadow);
+      color: var(--olive);
+    }
+
+    .comp-mark {
+      width: 96px;
+      height: 96px;
+      margin: 8px 0 10px;
+    }
+
+    .comp-mark svg { width: 100%; height: 100%; display: block; }
+
+    .comp-meta {
+      width: 100%;
+      border-top: 1px solid #E1E7DC;
+      margin-top: 16px;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #4A5A48;
+    }
+  
+    .exec-preview-bar {
+      background: #142618;
+      color: #FAFBF8;
+      padding: 10px 28px;
+      font-size: 13px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .exec-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .exec-badge {
+      background: #639A67;
+      color: #142618;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .exec-tabs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .exec-tab {
+      color: #E6F0E4;
+      text-decoration: none;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid rgba(230, 240, 228, 0.22);
+    }
+    .exec-tab.active {
+      background: #FAFBF8;
+      color: #142618;
+      border-color: #FAFBF8;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="exec-preview-bar">
+    <div class="exec-left">
+      <span class="exec-badge">Geoff &amp; Andy Preview</span>
+      <span><strong>Her Helping Hand</strong> · New Website + Locked <code>C8</code> Brand &amp; <code>F05</code> Type System</span>
+    </div>
+    <div class="exec-tabs">
+      <a class="exec-tab " href="index.html">1. Live Website Preview</a>
+      <a class="exec-tab " href="brand.html">2. C8 Brand Identity &amp; Logo Hub</a>
+      <a class="exec-tab active" href="fonts.html">3. F05 Font &amp; Wordmark Studio</a>
+    </div>
+  </div>
+
+
+  <header>
+    <div>
+      <h1>Her Helping Hand — Interactive Font &amp; Wordmark Studio</h1>
+    </div>
+    <span class="badge">Locked H1 Logo + Locked C8 Palette · 16 Font Systems</span>
+  </header>
+
+  <div class="container">
+    <div class="studio-grid">
+      <aside class="sidebar">
+        <h2>1. Fine-Tune Wordmark Typography Live</h2>
+        <div class="control-group">
+          <div class="ctrl-box">
+            <label>Wordmark Font</label>
+            <select id="selWordmarkFont"></select>
+          </div>
+          <div class="ctrl-box">
+            <label>Body / UI Sans</label>
+            <select id="selBodyFont">
+              <option value="'Plus Jakarta Sans'">Plus Jakarta Sans</option>
+              <option value="'DM Sans'">DM Sans</option>
+              <option value="'Outfit'">Outfit</option>
+              <option value="'Manrope'">Manrope</option>
+              <option value="'Inter'">Inter</option>
+              <option value="'Work Sans'">Work Sans</option>
+            </select>
+          </div>
+          <div class="ctrl-box">
+            <label>Weight <span id="valWeight">600</span></label>
+            <input type="range" id="rngWeight" min="400" max="700" step="100" value="600" />
+          </div>
+          <div class="ctrl-box">
+            <label>Size <span id="valSize">36px</span></label>
+            <input type="range" id="rngSize" min="26" max="46" step="1" value="36" />
+          </div>
+          <div class="ctrl-box">
+            <label>Tracking <span id="valTrack">-0.01em</span></label>
+            <input type="range" id="rngTrack" min="-0.04" max="0.12" step="0.005" value="-0.01" />
+          </div>
+          <div class="ctrl-box">
+            <label>Style / Case</label>
+            <select id="selCase">
+              <option value="title-normal">Title Case · Roman</option>
+              <option value="title-italic">Title Case · Italic</option>
+              <option value="upper-normal">UPPERCASE · Tracked</option>
+            </select>
+          </div>
+        </div>
+
+        <h2>2. 16 Curated Brand Font Pairings (Click Any)</h2>
+        <div class="pairing-list" id="pairingList"></div>
+      </aside>
+
+      <main>
+        <div class="live-stage">
+          <!-- Tile 1: Stacked Logo on Warm Cotton Paper -->
+          <div class="stage-tile tile-paper">
+            <div class="mark-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1419 254 1290 1290" width="1080" height="1080">
+  <title>Her Helping Hand — H1 Linked Hands Mark (Two-Tone Color)</title>
+  <g transform="translate(0.000000,2304.000000) scale(0.100000,-0.100000)">
+    <g id="left-hand-pillar" fill="#2D5A36"><path d="M16962 18208 c-9 -9 -12 -553 -12 -2385 0 -2213 1 -2374 17 -2380 12
+-5 24 4 42 28 14 19 60 70 102 114 69 72 388 439 482 553 21 26 71 83 111 127
+40 44 113 127 163 185 235 273 513 498 823 669 115 63 350 181 361 181 5 0 27
+11 49 25 l40 25 0 1423 c0 1093 -3 1426 -12 1435 -17 17 -2149 17 -2166 0z"/><path d="M20594 16060 c-12 -4 -79 -66 -150 -137 -105 -104 -228 -203 -289
+-233 -5 -3 -35 -22 -66 -42 -56 -37 -275 -151 -339 -177 -38 -15 -113 -47
+-145 -61 -11 -5 -45 -19 -75 -30 -30 -12 -64 -26 -75 -30 -88 -37 -123 -52
+-140 -60 -88 -39 -116 -50 -129 -50 -8 0 -17 -4 -20 -9 -3 -5 -17 -12 -30 -15
+-24 -6 -144 -57 -179 -77 -10 -5 -44 -24 -75 -40 -89 -48 -270 -158 -352 -215
+-312 -213 -418 -320 -1044 -1049 -128 -148 -349 -397 -492 -553 -142 -156
+-313 -343 -378 -415 -66 -73 -171 -189 -235 -258 -115 -124 -306 -334 -457
+-501 -44 -47 -191 -209 -329 -358 -137 -150 -294 -322 -348 -381 l-99 -109 5
+-48 c6 -60 25 -162 43 -232 30 -113 69 -238 85 -275 5 -11 16 -42 25 -70 22
+-68 83 -212 171 -405 51 -111 66 -141 89 -180 11 -19 38 -66 59 -105 73 -135
+194 -316 351 -525 129 -172 273 -340 291 -340 17 0 36 31 68 110 35 87 53 126
+189 400 131 266 155 310 251 471 142 235 337 508 503 704 124 145 442 464 554
+556 154 126 318 225 503 304 17 7 47 20 68 29 21 9 46 16 55 16 10 0 22 4 28
+9 5 5 43 18 84 30 41 12 89 26 105 31 99 29 272 63 390 76 33 3 65 10 72 15
+13 11 6 207 -9 225 -5 8 -48 11 -121 11 -102 -1 -117 2 -167 26 -63 30 -98 63
+-129 122 -30 56 -29 168 1 226 28 54 112 139 169 169 123 66 151 77 464 182
+159 52 264 90 330 118 67 28 317 153 348 175 21 14 40 25 42 25 8 0 143 96
+239 169 198 151 616 585 616 639 0 12 -4 22 -10 22 -5 0 -33 -11 -62 -24 -112
+-50 -306 -116 -340 -116 -11 0 -27 -4 -36 -9 -21 -11 -128 -28 -269 -42 -101
+-10 -159 -6 -287 21 -122 25 -253 125 -296 225 -33 78 -25 120 37 203 22 29
+33 55 33 77 0 57 54 198 103 272 57 85 184 208 293 282 390 268 573 447 669
+656 45 99 58 154 62 269 3 84 1 116 -11 141 -9 18 -16 37 -16 43 0 19 -85 105
+-117 118 -37 16 -49 16 -79 4z"/><path d="M19025 11700 c-48 -7 -135 -24 -275 -54 -67 -14 -290 -86 -347 -112
+-17 -8 -34 -14 -37 -14 -19 0 -214 -104 -289 -154 -300 -201 -765 -694 -1038
+-1101 -98 -147 -89 -54 -89 -871 0 -649 2 -724 16 -739 15 -14 115 -15 1078
+-13 883 3 1066 5 1079 17 16 12 17 131 17 1520 0 1159 -3 1510 -12 1519 -13
+13 -26 13 -103 2z"/></g>
+    <g id="right-hand-pillar" fill="#639A67"><path d="M22157 18206 c-12 -13 -14 -223 -15 -1499 -1 -1305 0 -1486 13 -1497
+19 -16 196 -6 305 16 222 46 347 87 520 172 208 101 344 207 616 477 105 105
+235 241 288 304 144 168 358 464 422 581 18 33 19 70 22 729 2 638 1 695 -14
+712 -16 18 -57 19 -1080 19 -911 0 -1065 -2 -1077 -14z"/><path d="M24954 17812 c-10 -6 -34 -59 -69 -152 -15 -40 -82 -205 -95 -235 -5
+-11 -19 -42 -30 -70 -82 -188 -221 -462 -281 -553 -16 -24 -29 -45 -29 -48 0
+-3 -26 -44 -57 -92 -32 -48 -62 -95 -68 -104 -106 -176 -440 -574 -685 -818
+-81 -81 -237 -219 -325 -287 -45 -34 -218 -141 -250 -153 -11 -4 -45 -19 -75
+-33 -57 -26 -292 -104 -390 -130 -90 -24 -421 -77 -480 -77 -35 0 -172 -22
+-280 -45 -36 -8 -78 -16 -95 -18 -30 -4 -89 -18 -180 -42 -27 -8 -79 -21 -115
+-30 -85 -22 -172 -49 -240 -75 -30 -12 -67 -25 -81 -30 -27 -8 -261 -122 -289
+-140 -40 -26 -307 -183 -325 -191 -11 -5 -36 -19 -55 -31 -19 -11 -85 -47
+-147 -79 -103 -53 -155 -76 -363 -162 -41 -17 -82 -36 -90 -42 -8 -6 -32 -20
+-53 -30 -21 -11 -47 -30 -59 -42 -29 -31 -18 -79 31 -134 43 -48 77 -68 162
+-93 76 -22 306 -22 409 0 91 19 174 43 217 61 17 7 36 13 42 13 6 0 25 6 43
+14 18 8 52 21 76 30 144 55 165 63 250 105 34 17 67 31 73 31 6 0 51 20 101
+45 50 25 95 45 99 45 5 0 9 -7 9 -15 0 -16 -45 -101 -66 -126 -8 -8 -14 -19
+-14 -23 0 -14 -156 -214 -271 -346 -120 -138 -333 -353 -449 -451 -71 -61
+-197 -156 -275 -209 -96 -64 -291 -165 -440 -226 -16 -6 -46 -19 -65 -27 -66
+-28 -135 -52 -450 -155 -158 -52 -214 -77 -307 -139 -134 -89 -162 -216 -64
+-290 l43 -33 136 0 c75 0 184 7 242 15 177 26 293 46 335 57 22 6 58 15 80 19
+62 13 157 36 190 48 17 5 59 19 95 30 36 11 90 30 120 41 30 12 63 24 73 27
+19 6 181 87 267 135 122 66 339 213 559 377 125 93 153 104 175 69 9 -14 3
+-25 -29 -59 -56 -57 -396 -314 -533 -401 -80 -51 -296 -161 -401 -204 -47 -20
+-101 -42 -119 -50 -18 -8 -39 -14 -47 -14 -8 0 -29 -6 -47 -14 -18 -8 -60 -22
+-93 -31 -33 -9 -80 -23 -105 -31 -25 -8 -55 -14 -68 -14 -13 0 -33 -5 -44 -11
+-11 -6 -44 -15 -72 -19 -182 -28 -279 -57 -323 -95 -34 -29 -37 -36 -36 -82 1
+-101 71 -168 238 -229 68 -25 301 -25 430 0 145 28 237 48 280 61 22 7 67 21
+100 31 33 9 92 28 130 41 39 14 84 28 100 33 90 24 378 164 515 251 8 5 24 14
+35 19 50 26 271 180 328 230 23 20 71 58 105 83 52 38 67 45 83 37 31 -17 22
+-44 -33 -97 -81 -75 -409 -313 -478 -346 -8 -4 -31 -17 -50 -28 -69 -42 -260
+-138 -347 -175 -138 -57 -144 -60 -208 -79 -33 -10 -76 -23 -95 -30 -93 -34
+-258 -75 -298 -75 -43 0 -102 -25 -102 -44 0 -38 130 -105 289 -148 64 -18
+106 -21 266 -22 155 -1 205 3 270 18 86 21 241 69 290 91 17 7 66 28 110 46
+103 43 335 161 410 209 17 11 39 24 50 30 52 28 215 136 315 210 42 30 85 61
+98 68 40 22 69 11 56 -23 -6 -16 -112 -100 -204 -161 -25 -17 -74 -51 -110
+-75 -36 -25 -112 -73 -170 -108 -58 -34 -112 -67 -120 -72 -15 -9 -206 -103
+-385 -190 -98 -47 -145 -80 -145 -100 0 -19 28 -64 57 -90 15 -14 47 -33 71
+-43 56 -21 206 -22 281 0 31 9 81 23 111 31 73 21 108 33 285 103 83 33 98 39
+205 88 81 38 270 130 290 142 309 181 432 271 640 462 74 68 221 218 326 334
+105 115 240 262 300 327 60 65 136 150 169 190 33 39 98 113 145 162 47 50
+118 129 158 175 39 47 138 158 220 247 81 89 201 221 267 293 66 73 215 236
+331 364 116 127 248 274 294 326 45 52 142 158 214 235 72 78 196 215 276 305
+79 91 181 203 225 250 44 47 119 130 168 184 99 112 98 107 68 256 -47 231
+-94 399 -161 570 -12 30 -25 66 -30 80 -31 94 -168 370 -257 518 -152 254
+-209 334 -406 570 -120 144 -274 312 -286 312 -3 0 -11 -4 -17 -8z"/><path d="M24266 13375 c-10 -15 -50 -63 -89 -107 -40 -45 -94 -107 -122 -139
+-51 -59 -206 -228 -495 -544 -91 -99 -221 -242 -288 -317 -196 -218 -431 -416
+-707 -598 -71 -47 -164 -100 -275 -157 -69 -36 -131 -72 -139 -81 -11 -14 -12
+-239 -7 -1387 5 -954 10 -1373 18 -1382 8 -11 214 -13 1074 -13 l1064 0 15 23
+c13 21 15 281 13 2373 l-3 2349 -21 3 c-14 2 -27 -6 -38 -23z"/></g>
+  </g>
+</svg></div>
+            <div class="live-wordmark" id="wmPaper">Her Helping Hand</div>
+            <div class="live-subhead">Waterloo Region</div>
+          </div>
+
+          <!-- Tile 2: Inverse Stacked Logo on Dark Heritage Olive -->
+          <div class="stage-tile tile-dark">
+            <div class="mark-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1419 254 1290 1290" width="1080" height="1080">
+  <title>Her Helping Hand — H1 Linked Hands Mark (Inverse Light)</title>
+  <g transform="translate(0.000000,2304.000000) scale(0.100000,-0.100000)">
+    <g id="left-hand-pillar" fill="#FAFBF8"><path d="M16962 18208 c-9 -9 -12 -553 -12 -2385 0 -2213 1 -2374 17 -2380 12
+-5 24 4 42 28 14 19 60 70 102 114 69 72 388 439 482 553 21 26 71 83 111 127
+40 44 113 127 163 185 235 273 513 498 823 669 115 63 350 181 361 181 5 0 27
+11 49 25 l40 25 0 1423 c0 1093 -3 1426 -12 1435 -17 17 -2149 17 -2166 0z"/><path d="M20594 16060 c-12 -4 -79 -66 -150 -137 -105 -104 -228 -203 -289
+-233 -5 -3 -35 -22 -66 -42 -56 -37 -275 -151 -339 -177 -38 -15 -113 -47
+-145 -61 -11 -5 -45 -19 -75 -30 -30 -12 -64 -26 -75 -30 -88 -37 -123 -52
+-140 -60 -88 -39 -116 -50 -129 -50 -8 0 -17 -4 -20 -9 -3 -5 -17 -12 -30 -15
+-24 -6 -144 -57 -179 -77 -10 -5 -44 -24 -75 -40 -89 -48 -270 -158 -352 -215
+-312 -213 -418 -320 -1044 -1049 -128 -148 -349 -397 -492 -553 -142 -156
+-313 -343 -378 -415 -66 -73 -171 -189 -235 -258 -115 -124 -306 -334 -457
+-501 -44 -47 -191 -209 -329 -358 -137 -150 -294 -322 -348 -381 l-99 -109 5
+-48 c6 -60 25 -162 43 -232 30 -113 69 -238 85 -275 5 -11 16 -42 25 -70 22
+-68 83 -212 171 -405 51 -111 66 -141 89 -180 11 -19 38 -66 59 -105 73 -135
+194 -316 351 -525 129 -172 273 -340 291 -340 17 0 36 31 68 110 35 87 53 126
+189 400 131 266 155 310 251 471 142 235 337 508 503 704 124 145 442 464 554
+556 154 126 318 225 503 304 17 7 47 20 68 29 21 9 46 16 55 16 10 0 22 4 28
+9 5 5 43 18 84 30 41 12 89 26 105 31 99 29 272 63 390 76 33 3 65 10 72 15
+13 11 6 207 -9 225 -5 8 -48 11 -121 11 -102 -1 -117 2 -167 26 -63 30 -98 63
+-129 122 -30 56 -29 168 1 226 28 54 112 139 169 169 123 66 151 77 464 182
+159 52 264 90 330 118 67 28 317 153 348 175 21 14 40 25 42 25 8 0 143 96
+239 169 198 151 616 585 616 639 0 12 -4 22 -10 22 -5 0 -33 -11 -62 -24 -112
+-50 -306 -116 -340 -116 -11 0 -27 -4 -36 -9 -21 -11 -128 -28 -269 -42 -101
+-10 -159 -6 -287 21 -122 25 -253 125 -296 225 -33 78 -25 120 37 203 22 29
+33 55 33 77 0 57 54 198 103 272 57 85 184 208 293 282 390 268 573 447 669
+656 45 99 58 154 62 269 3 84 1 116 -11 141 -9 18 -16 37 -16 43 0 19 -85 105
+-117 118 -37 16 -49 16 -79 4z"/><path d="M19025 11700 c-48 -7 -135 -24 -275 -54 -67 -14 -290 -86 -347 -112
+-17 -8 -34 -14 -37 -14 -19 0 -214 -104 -289 -154 -300 -201 -765 -694 -1038
+-1101 -98 -147 -89 -54 -89 -871 0 -649 2 -724 16 -739 15 -14 115 -15 1078
+-13 883 3 1066 5 1079 17 16 12 17 131 17 1520 0 1159 -3 1510 -12 1519 -13
+13 -26 13 -103 2z"/></g>
+    <g id="right-hand-pillar" fill="#8FBF93"><path d="M22157 18206 c-12 -13 -14 -223 -15 -1499 -1 -1305 0 -1486 13 -1497
+19 -16 196 -6 305 16 222 46 347 87 520 172 208 101 344 207 616 477 105 105
+235 241 288 304 144 168 358 464 422 581 18 33 19 70 22 729 2 638 1 695 -14
+712 -16 18 -57 19 -1080 19 -911 0 -1065 -2 -1077 -14z"/><path d="M24954 17812 c-10 -6 -34 -59 -69 -152 -15 -40 -82 -205 -95 -235 -5
+-11 -19 -42 -30 -70 -82 -188 -221 -462 -281 -553 -16 -24 -29 -45 -29 -48 0
+-3 -26 -44 -57 -92 -32 -48 -62 -95 -68 -104 -106 -176 -440 -574 -685 -818
+-81 -81 -237 -219 -325 -287 -45 -34 -218 -141 -250 -153 -11 -4 -45 -19 -75
+-33 -57 -26 -292 -104 -390 -130 -90 -24 -421 -77 -480 -77 -35 0 -172 -22
+-280 -45 -36 -8 -78 -16 -95 -18 -30 -4 -89 -18 -180 -42 -27 -8 -79 -21 -115
+-30 -85 -22 -172 -49 -240 -75 -30 -12 -67 -25 -81 -30 -27 -8 -261 -122 -289
+-140 -40 -26 -307 -183 -325 -191 -11 -5 -36 -19 -55 -31 -19 -11 -85 -47
+-147 -79 -103 -53 -155 -76 -363 -162 -41 -17 -82 -36 -90 -42 -8 -6 -32 -20
+-53 -30 -21 -11 -47 -30 -59 -42 -29 -31 -18 -79 31 -134 43 -48 77 -68 162
+-93 76 -22 306 -22 409 0 91 19 174 43 217 61 17 7 36 13 42 13 6 0 25 6 43
+14 18 8 52 21 76 30 144 55 165 63 250 105 34 17 67 31 73 31 6 0 51 20 101
+45 50 25 95 45 99 45 5 0 9 -7 9 -15 0 -16 -45 -101 -66 -126 -8 -8 -14 -19
+-14 -23 0 -14 -156 -214 -271 -346 -120 -138 -333 -353 -449 -451 -71 -61
+-197 -156 -275 -209 -96 -64 -291 -165 -440 -226 -16 -6 -46 -19 -65 -27 -66
+-28 -135 -52 -450 -155 -158 -52 -214 -77 -307 -139 -134 -89 -162 -216 -64
+-290 l43 -33 136 0 c75 0 184 7 242 15 177 26 293 46 335 57 22 6 58 15 80 19
+62 13 157 36 190 48 17 5 59 19 95 30 36 11 90 30 120 41 30 12 63 24 73 27
+19 6 181 87 267 135 122 66 339 213 559 377 125 93 153 104 175 69 9 -14 3
+-25 -29 -59 -56 -57 -396 -314 -533 -401 -80 -51 -296 -161 -401 -204 -47 -20
+-101 -42 -119 -50 -18 -8 -39 -14 -47 -14 -8 0 -29 -6 -47 -14 -18 -8 -60 -22
+-93 -31 -33 -9 -80 -23 -105 -31 -25 -8 -55 -14 -68 -14 -13 0 -33 -5 -44 -11
+-11 -6 -44 -15 -72 -19 -182 -28 -279 -57 -323 -95 -34 -29 -37 -36 -36 -82 1
+-101 71 -168 238 -229 68 -25 301 -25 430 0 145 28 237 48 280 61 22 7 67 21
+100 31 33 9 92 28 130 41 39 14 84 28 100 33 90 24 378 164 515 251 8 5 24 14
+35 19 50 26 271 180 328 230 23 20 71 58 105 83 52 38 67 45 83 37 31 -17 22
+-44 -33 -97 -81 -75 -409 -313 -478 -346 -8 -4 -31 -17 -50 -28 -69 -42 -260
+-138 -347 -175 -138 -57 -144 -60 -208 -79 -33 -10 -76 -23 -95 -30 -93 -34
+-258 -75 -298 -75 -43 0 -102 -25 -102 -44 0 -38 130 -105 289 -148 64 -18
+106 -21 266 -22 155 -1 205 3 270 18 86 21 241 69 290 91 17 7 66 28 110 46
+103 43 335 161 410 209 17 11 39 24 50 30 52 28 215 136 315 210 42 30 85 61
+98 68 40 22 69 11 56 -23 -6 -16 -112 -100 -204 -161 -25 -17 -74 -51 -110
+-75 -36 -25 -112 -73 -170 -108 -58 -34 -112 -67 -120 -72 -15 -9 -206 -103
+-385 -190 -98 -47 -145 -80 -145 -100 0 -19 28 -64 57 -90 15 -14 47 -33 71
+-43 56 -21 206 -22 281 0 31 9 81 23 111 31 73 21 108 33 285 103 83 33 98 39
+205 88 81 38 270 130 290 142 309 181 432 271 640 462 74 68 221 218 326 334
+105 115 240 262 300 327 60 65 136 150 169 190 33 39 98 113 145 162 47 50
+118 129 158 175 39 47 138 158 220 247 81 89 201 221 267 293 66 73 215 236
+331 364 116 127 248 274 294 326 45 52 142 158 214 235 72 78 196 215 276 305
+79 91 181 203 225 250 44 47 119 130 168 184 99 112 98 107 68 256 -47 231
+-94 399 -161 570 -12 30 -25 66 -30 80 -31 94 -168 370 -257 518 -152 254
+-209 334 -406 570 -120 144 -274 312 -286 312 -3 0 -11 -4 -17 -8z"/><path d="M24266 13375 c-10 -15 -50 -63 -89 -107 -40 -45 -94 -107 -122 -139
+-51 -59 -206 -228 -495 -544 -91 -99 -221 -242 -288 -317 -196 -218 -431 -416
+-707 -598 -71 -47 -164 -100 -275 -157 -69 -36 -131 -72 -139 -81 -11 -14 -12
+-239 -7 -1387 5 -954 10 -1373 18 -1382 8 -11 214 -13 1074 -13 l1064 0 15 23
+c13 21 15 281 13 2373 l-3 2349 -21 3 c-14 2 -27 -6 -38 -23z"/></g>
+  </g>
+</svg></div>
+            <div class="live-wordmark" id="wmDark" style="color: var(--paper);">Her Helping Hand</div>
+            <div class="live-subhead" style="color: #9CC39B;">Senior Companionship</div>
+          </div>
+
+          <!-- Tile 3: Horizontal Navbar Lockup + Tagline Card -->
+          <div class="stage-tile tile-meadow">
+            <div class="horiz-lockup">
+              <div class="horiz-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1419 254 1290 1290" width="1080" height="1080">
+  <title>Her Helping Hand — H1 Linked Hands Mark (Two-Tone Color)</title>
+  <g transform="translate(0.000000,2304.000000) scale(0.100000,-0.100000)">
+    <g id="left-hand-pillar" fill="#2D5A36"><path d="M16962 18208 c-9 -9 -12 -553 -12 -2385 0 -2213 1 -2374 17 -2380 12
+-5 24 4 42 28 14 19 60 70 102 114 69 72 388 439 482 553 21 26 71 83 111 127
+40 44 113 127 163 185 235 273 513 498 823 669 115 63 350 181 361 181 5 0 27
+11 49 25 l40 25 0 1423 c0 1093 -3 1426 -12 1435 -17 17 -2149 17 -2166 0z"/><path d="M20594 16060 c-12 -4 -79 -66 -150 -137 -105 -104 -228 -203 -289
+-233 -5 -3 -35 -22 -66 -42 -56 -37 -275 -151 -339 -177 -38 -15 -113 -47
+-145 -61 -11 -5 -45 -19 -75 -30 -30 -12 -64 -26 -75 -30 -88 -37 -123 -52
+-140 -60 -88 -39 -116 -50 -129 -50 -8 0 -17 -4 -20 -9 -3 -5 -17 -12 -30 -15
+-24 -6 -144 -57 -179 -77 -10 -5 -44 -24 -75 -40 -89 -48 -270 -158 -352 -215
+-312 -213 -418 -320 -1044 -1049 -128 -148 -349 -397 -492 -553 -142 -156
+-313 -343 -378 -415 -66 -73 -171 -189 -235 -258 -115 -124 -306 -334 -457
+-501 -44 -47 -191 -209 -329 -358 -137 -150 -294 -322 -348 -381 l-99 -109 5
+-48 c6 -60 25 -162 43 -232 30 -113 69 -238 85 -275 5 -11 16 -42 25 -70 22
+-68 83 -212 171 -405 51 -111 66 -141 89 -180 11 -19 38 -66 59 -105 73 -135
+194 -316 351 -525 129 -172 273 -340 291 -340 17 0 36 31 68 110 35 87 53 126
+189 400 131 266 155 310 251 471 142 235 337 508 503 704 124 145 442 464 554
+556 154 126 318 225 503 304 17 7 47 20 68 29 21 9 46 16 55 16 10 0 22 4 28
+9 5 5 43 18 84 30 41 12 89 26 105 31 99 29 272 63 390 76 33 3 65 10 72 15
+13 11 6 207 -9 225 -5 8 -48 11 -121 11 -102 -1 -117 2 -167 26 -63 30 -98 63
+-129 122 -30 56 -29 168 1 226 28 54 112 139 169 169 123 66 151 77 464 182
+159 52 264 90 330 118 67 28 317 153 348 175 21 14 40 25 42 25 8 0 143 96
+239 169 198 151 616 585 616 639 0 12 -4 22 -10 22 -5 0 -33 -11 -62 -24 -112
+-50 -306 -116 -340 -116 -11 0 -27 -4 -36 -9 -21 -11 -128 -28 -269 -42 -101
+-10 -159 -6 -287 21 -122 25 -253 125 -296 225 -33 78 -25 120 37 203 22 29
+33 55 33 77 0 57 54 198 103 272 57 85 184 208 293 282 390 268 573 447 669
+656 45 99 58 154 62 269 3 84 1 116 -11 141 -9 18 -16 37 -16 43 0 19 -85 105
+-117 118 -37 16 -49 16 -79 4z"/><path d="M19025 11700 c-48 -7 -135 -24 -275 -54 -67 -14 -290 -86 -347 -112
+-17 -8 -34 -14 -37 -14 -19 0 -214 -104 -289 -154 -300 -201 -765 -694 -1038
+-1101 -98 -147 -89 -54 -89 -871 0 -649 2 -724 16 -739 15 -14 115 -15 1078
+-13 883 3 1066 5 1079 17 16 12 17 131 17 1520 0 1159 -3 1510 -12 1519 -13
+13 -26 13 -103 2z"/></g>
+    <g id="right-hand-pillar" fill="#639A67"><path d="M22157 18206 c-12 -13 -14 -223 -15 -1499 -1 -1305 0 -1486 13 -1497
+19 -16 196 -6 305 16 222 46 347 87 520 172 208 101 344 207 616 477 105 105
+235 241 288 304 144 168 358 464 422 581 18 33 19 70 22 729 2 638 1 695 -14
+712 -16 18 -57 19 -1080 19 -911 0 -1065 -2 -1077 -14z"/><path d="M24954 17812 c-10 -6 -34 -59 -69 -152 -15 -40 -82 -205 -95 -235 -5
+-11 -19 -42 -30 -70 -82 -188 -221 -462 -281 -553 -16 -24 -29 -45 -29 -48 0
+-3 -26 -44 -57 -92 -32 -48 -62 -95 -68 -104 -106 -176 -440 -574 -685 -818
+-81 -81 -237 -219 -325 -287 -45 -34 -218 -141 -250 -153 -11 -4 -45 -19 -75
+-33 -57 -26 -292 -104 -390 -130 -90 -24 -421 -77 -480 -77 -35 0 -172 -22
+-280 -45 -36 -8 -78 -16 -95 -18 -30 -4 -89 -18 -180 -42 -27 -8 -79 -21 -115
+-30 -85 -22 -172 -49 -240 -75 -30 -12 -67 -25 -81 -30 -27 -8 -261 -122 -289
+-140 -40 -26 -307 -183 -325 -191 -11 -5 -36 -19 -55 -31 -19 -11 -85 -47
+-147 -79 -103 -53 -155 -76 -363 -162 -41 -17 -82 -36 -90 -42 -8 -6 -32 -20
+-53 -30 -21 -11 -47 -30 -59 -42 -29 -31 -18 -79 31 -134 43 -48 77 -68 162
+-93 76 -22 306 -22 409 0 91 19 174 43 217 61 17 7 36 13 42 13 6 0 25 6 43
+14 18 8 52 21 76 30 144 55 165 63 250 105 34 17 67 31 73 31 6 0 51 20 101
+45 50 25 95 45 99 45 5 0 9 -7 9 -15 0 -16 -45 -101 -66 -126 -8 -8 -14 -19
+-14 -23 0 -14 -156 -214 -271 -346 -120 -138 -333 -353 -449 -451 -71 -61
+-197 -156 -275 -209 -96 -64 -291 -165 -440 -226 -16 -6 -46 -19 -65 -27 -66
+-28 -135 -52 -450 -155 -158 -52 -214 -77 -307 -139 -134 -89 -162 -216 -64
+-290 l43 -33 136 0 c75 0 184 7 242 15 177 26 293 46 335 57 22 6 58 15 80 19
+62 13 157 36 190 48 17 5 59 19 95 30 36 11 90 30 120 41 30 12 63 24 73 27
+19 6 181 87 267 135 122 66 339 213 559 377 125 93 153 104 175 69 9 -14 3
+-25 -29 -59 -56 -57 -396 -314 -533 -401 -80 -51 -296 -161 -401 -204 -47 -20
+-101 -42 -119 -50 -18 -8 -39 -14 -47 -14 -8 0 -29 -6 -47 -14 -18 -8 -60 -22
+-93 -31 -33 -9 -80 -23 -105 -31 -25 -8 -55 -14 -68 -14 -13 0 -33 -5 -44 -11
+-11 -6 -44 -15 -72 -19 -182 -28 -279 -57 -323 -95 -34 -29 -37 -36 -36 -82 1
+-101 71 -168 238 -229 68 -25 301 -25 430 0 145 28 237 48 280 61 22 7 67 21
+100 31 33 9 92 28 130 41 39 14 84 28 100 33 90 24 378 164 515 251 8 5 24 14
+35 19 50 26 271 180 328 230 23 20 71 58 105 83 52 38 67 45 83 37 31 -17 22
+-44 -33 -97 -81 -75 -409 -313 -478 -346 -8 -4 -31 -17 -50 -28 -69 -42 -260
+-138 -347 -175 -138 -57 -144 -60 -208 -79 -33 -10 -76 -23 -95 -30 -93 -34
+-258 -75 -298 -75 -43 0 -102 -25 -102 -44 0 -38 130 -105 289 -148 64 -18
+106 -21 266 -22 155 -1 205 3 270 18 86 21 241 69 290 91 17 7 66 28 110 46
+103 43 335 161 410 209 17 11 39 24 50 30 52 28 215 136 315 210 42 30 85 61
+98 68 40 22 69 11 56 -23 -6 -16 -112 -100 -204 -161 -25 -17 -74 -51 -110
+-75 -36 -25 -112 -73 -170 -108 -58 -34 -112 -67 -120 -72 -15 -9 -206 -103
+-385 -190 -98 -47 -145 -80 -145 -100 0 -19 28 -64 57 -90 15 -14 47 -33 71
+-43 56 -21 206 -22 281 0 31 9 81 23 111 31 73 21 108 33 285 103 83 33 98 39
+205 88 81 38 270 130 290 142 309 181 432 271 640 462 74 68 221 218 326 334
+105 115 240 262 300 327 60 65 136 150 169 190 33 39 98 113 145 162 47 50
+118 129 158 175 39 47 138 158 220 247 81 89 201 221 267 293 66 73 215 236
+331 364 116 127 248 274 294 326 45 52 142 158 214 235 72 78 196 215 276 305
+79 91 181 203 225 250 44 47 119 130 168 184 99 112 98 107 68 256 -47 231
+-94 399 -161 570 -12 30 -25 66 -30 80 -31 94 -168 370 -257 518 -152 254
+-209 334 -406 570 -120 144 -274 312 -286 312 -3 0 -11 -4 -17 -8z"/><path d="M24266 13375 c-10 -15 -50 -63 -89 -107 -40 -45 -94 -107 -122 -139
+-51 -59 -206 -228 -495 -544 -91 -99 -221 -242 -288 -317 -196 -218 -431 -416
+-707 -598 -71 -47 -164 -100 -275 -157 -69 -36 -131 -72 -139 -81 -11 -14 -12
+-239 -7 -1387 5 -954 10 -1373 18 -1382 8 -11 214 -13 1074 -13 l1064 0 15 23
+c13 21 15 281 13 2373 l-3 2349 -21 3 c-14 2 -27 -6 -38 -23z"/></g>
+  </g>
+</svg></div>
+              <div>
+                <div class="live-wordmark" style="font-size: 25px; text-align:left;">Her Helping Hand</div>
+                <div class="live-subhead" style="font-size: 8.5px; margin-top:2px;">Waterloo Region</div>
+              </div>
+            </div>
+            <p style="font-family: var(--body-font); font-size: 13px; color: #384737; text-align:center; max-width: 26ch;">
+              “Someone Mom looks forward to seeing every week.”
+            </p>
+          </div>
+
+          <!-- Tile 4: Live Website Hero Preview (Spans 2 columns) -->
+          <div class="stage-tile tile-paper" style="grid-column: span 2; align-items: flex-start; text-align: left; padding: 34px 38px;">
+            <div style="font-family: var(--body-font); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--olive); margin-bottom: 10px;">
+              Personal Senior Companionship · Kitchener, Waterloo &amp; Cambridge
+            </div>
+            <h3 id="heroHeadline" style="font-family: var(--heading-font); font-weight: var(--wordmark-weight); font-size: 46px; line-height: 1.08; letter-spacing: var(--wordmark-tracking); color: var(--ink); margin-bottom: 14px;">
+              A helping hand, <em style="font-weight: 400; color: var(--olive);">right when</em> your family needs one.
+            </h3>
+            <p style="font-family: var(--body-font); font-size: 17px; line-height: 1.6; color: #384737; max-width: 56ch; margin-bottom: 22px;">
+              Unhurried conversation over morning tea, scenic walks, grocery errands, and a tidy home—with the same warm, familiar companion every single week.
+            </p>
+            <div style="display:flex; gap: 12px; flex-wrap: wrap;">
+              <span style="font-family: var(--body-font); background: var(--olive); color: #fff; padding: 11px 22px; border-radius: 999px; font-size: 14px; font-weight: 600;">
+                Book a Free Consultation
+              </span>
+              <span style="font-family: var(--body-font); background: var(--meadow); color: var(--ink); padding: 11px 20px; border-radius: 999px; font-size: 14px; font-weight: 600;">
+                Call 226-339-0680
+              </span>
+            </div>
+          </div>
+
+          <!-- Tile 5: Statement Quote Card + Type Specimen -->
+          <div class="stage-tile tile-dark" style="align-items: flex-start; justify-content: space-between; padding: 30px;">
+            <div style="font-family: var(--heading-font); font-weight: var(--wordmark-weight); font-size: 42px; line-height: 1.05; color: var(--paper);">
+              Warmth<br>you can<br><em style="color: var(--meadow); font-weight: 400;">count on.</em>
+            </div>
+            <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; display:flex; justify-content:space-between; align-items:baseline;">
+              <span id="specFontName" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9CC39B;">Cormorant Garamond</span>
+              <span style="font-family: var(--heading-font); font-size: 26px;">Aa <em>Aa</em></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-section-title">
+          <h2>Compare All 16 Wordmark Fonts Side-by-Side (Click Any Card to Select)</h2>
+          <p style="font-size: 13px; color: #98a69b;">Tell me the number (<code>F01</code>–<code>F16</code>) you like best and I will lock it into your final SVG, 1080p, and 4K files.</p>
+        </div>
+
+        <div class="comparison-grid" id="comparisonGrid"></div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const PAIRINGS = [
+      {
+        id: "F01",
+        name: "Cormorant Garamond + Plus Jakarta Sans",
+        serif: "'Cormorant Garamond'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 600,
+        tracking: "-0.01em",
+        size: 38,
+        vibe: "Board C8 Default · Sculptural High-Contrast Literary Serif (Aesop / Kinfolk)"
+      },
+      {
+        id: "F02",
+        name: "Fraunces (Soft Optical Serif) + Plus Jakarta Sans",
+        serif: "'Fraunces'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 600,
+        tracking: "-0.02em",
+        size: 33,
+        vibe: "Chobani / Warm Editorial · Expressive, warm rounded serifs with human charm"
+      },
+      {
+        id: "F03",
+        name: "Instrument Serif + Plus Jakarta Sans",
+        serif: "'Instrument Serif'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 400,
+        tracking: "0em",
+        size: 39,
+        vibe: "Modern Editorial Studio · Crisp, tall condensed editorial elegance"
+      },
+      {
+        id: "F04",
+        name: "Playfair Display + DM Sans",
+        serif: "'Playfair Display'",
+        sans: "'DM Sans'",
+        weight: 600,
+        tracking: "-0.01em",
+        size: 33,
+        vibe: "Elevated Original herhelpinghand.com Serif · Familiar & authoritative"
+      },
+      {
+        id: "F05",
+        name: "Newsreader + Inter",
+        serif: "'Newsreader'",
+        sans: "'Inter'",
+        weight: 500,
+        tracking: "-0.015em",
+        size: 35,
+        vibe: "One Medical / NYT Editorial · Warm, ultra-legible literary book serif"
+      },
+      {
+        id: "F06",
+        name: "Lora + Plus Jakarta Sans",
+        serif: "'Lora'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 600,
+        tracking: "-0.01em",
+        size: 34,
+        vibe: "Calligraphic Warmth · Brush-inspired gentle curves, very approachable"
+      },
+      {
+        id: "F07",
+        name: "Libre Baskerville + Work Sans",
+        serif: "'Libre Baskerville'",
+        sans: "'Work Sans'",
+        weight: 400,
+        tracking: "-0.01em",
+        size: 31,
+        vibe: "Classic Heritage Trust · Traditional book proportion with wide openness"
+      },
+      {
+        id: "F08",
+        name: "EB Garamond + DM Sans",
+        serif: "'EB Garamond'",
+        sans: "'DM Sans'",
+        weight: 500,
+        tracking: "-0.005em",
+        size: 37,
+        vibe: "Timeless Literary Grace · Classic Renaissance proportions"
+      },
+      {
+        id: "F09",
+        name: "DM Serif Display + DM Sans",
+        serif: "'DM Serif Display'",
+        sans: "'DM Sans'",
+        weight: 400,
+        tracking: "0em",
+        size: 34,
+        vibe: "Bold Editorial Presence · High-contrast display headlines & wordmark"
+      },
+      {
+        id: "F10",
+        name: "Spectral + Plus Jakarta Sans",
+        serif: "'Spectral'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 500,
+        tracking: "-0.01em",
+        size: 35,
+        vibe: "Crisp Screen Editorial · Designed by Production Type for clean reading"
+      },
+      {
+        id: "F11",
+        name: "Crimson Pro + Manrope",
+        serif: "'Crimson Pro'",
+        sans: "'Manrope'",
+        weight: 600,
+        tracking: "-0.01em",
+        size: 37,
+        vibe: "Warm Academic & Care Authority · Soft old-style serif proportions"
+      },
+      {
+        id: "F12",
+        name: "Marcellus (Roman Inscribed) + Plus Jakarta Sans",
+        serif: "'Marcellus'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 400,
+        tracking: "0.02em",
+        size: 33,
+        vibe: "Flare-Serif Sanctuary · Subtle calligraphic flares between serif and sans"
+      },
+      {
+        id: "F13",
+        name: "Bodoni Moda + Inter",
+        serif: "'Bodoni Moda'",
+        sans: "'Inter'",
+        weight: 600,
+        tracking: "-0.01em",
+        size: 33,
+        vibe: "Luxury Magazine High-Contrast · Dramatic thick-thin architectural strokes"
+      },
+      {
+        id: "F14",
+        name: "Tenor Sans + Plus Jakarta Sans",
+        serif: "'Tenor Sans'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 400,
+        tracking: "0.02em",
+        size: 32,
+        vibe: "Warm Humanist Sans-Serif · Clean engraved sans with calligraphic warmth"
+      },
+      {
+        id: "F15",
+        name: "Outfit (Modern Geometric-Humanist) + Plus Jakarta Sans",
+        serif: "'Outfit'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 600,
+        tracking: "-0.015em",
+        size: 33,
+        vibe: "Modern All-Sans Care Brand · Friendly, clean, ultra-contemporary"
+      },
+      {
+        id: "F16",
+        name: "Plus Jakarta Sans (Unified Sans System)",
+        serif: "'Plus Jakarta Sans'",
+        sans: "'Plus Jakarta Sans'",
+        weight: 700,
+        tracking: "-0.02em",
+        size: 32,
+        vibe: "Swiss Modernist Clarity · Matches the geometric pillars of the H1 mark"
+      }
+    ];
+
+    let activeId = "F01";
+
+    const selWordmark = document.getElementById("selWordmarkFont");
+    PAIRINGS.forEach(p => {
+      const opt = document.createElement("option");
+      opt.value = p.serif;
+      opt.textContent = `${p.id} · ${p.serif.replace(/'/g, "")}`;
+      selWordmark.appendChild(opt);
+    });
+
+    function applyPairing(p) {
+      activeId = p.id;
+      document.documentElement.style.setProperty("--wordmark-font", `${p.serif}, Georgia, serif`);
+      document.documentElement.style.setProperty("--heading-font", `${p.serif}, Georgia, serif`);
+      document.documentElement.style.setProperty("--body-font", `${p.sans}, -apple-system, sans-serif`);
+      document.documentElement.style.setProperty("--wordmark-weight", p.weight);
+      document.documentElement.style.setProperty("--wordmark-tracking", p.tracking);
+      document.documentElement.style.setProperty("--wordmark-size", p.size + "px");
+
+      selWordmark.value = p.serif;
+      document.getElementById("selBodyFont").value = p.sans;
+      document.getElementById("rngWeight").value = p.weight;
+      document.getElementById("valWeight").textContent = p.weight;
+      document.getElementById("rngSize").value = p.size;
+      document.getElementById("valSize").textContent = p.size + "px";
+      document.getElementById("rngTrack").value = parseFloat(p.tracking);
+      document.getElementById("valTrack").textContent = p.tracking;
+      document.getElementById("specFontName").textContent = `${p.id} · ${p.name}`;
+
+      document.querySelectorAll(".pairing-btn").forEach(b => b.classList.toggle("active", b.dataset.id === p.id));
+      document.querySelectorAll(".comp-card").forEach(c => c.classList.toggle("active", c.dataset.id === p.id));
+    }
+
+    const listEl = document.getElementById("pairingList");
+    const gridEl = document.getElementById("comparisonGrid");
+
+    PAIRINGS.forEach(p => {
+      const btn = document.createElement("button");
+      btn.className = "pairing-btn";
+      btn.dataset.id = p.id;
+      btn.innerHTML = `
+        <div class="pairing-meta">
+          <span class="pairing-id">${p.id}</span>
+          <span class="pairing-title">${p.name}</span>
+          <span class="pairing-vibe">${p.vibe}</span>
+        </div>
+        <span class="pairing-sample" style="font-family:${p.serif}; font-weight:${p.weight};">Aa</span>
+      `;
+      btn.addEventListener("click", () => applyPairing(p));
+      listEl.appendChild(btn);
+
+      const card = document.createElement("div");
+      card.className = "comp-card";
+      card.dataset.id = p.id;
+      card.innerHTML = `
+        <span class="comp-tag">${p.id}</span>
+        <div class="comp-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1419 254 1290 1290" width="1080" height="1080">
+  <title>Her Helping Hand — H1 Linked Hands Mark (Two-Tone Color)</title>
+  <g transform="translate(0.000000,2304.000000) scale(0.100000,-0.100000)">
+    <g id="left-hand-pillar" fill="#2D5A36"><path d="M16962 18208 c-9 -9 -12 -553 -12 -2385 0 -2213 1 -2374 17 -2380 12
+-5 24 4 42 28 14 19 60 70 102 114 69 72 388 439 482 553 21 26 71 83 111 127
+40 44 113 127 163 185 235 273 513 498 823 669 115 63 350 181 361 181 5 0 27
+11 49 25 l40 25 0 1423 c0 1093 -3 1426 -12 1435 -17 17 -2149 17 -2166 0z"/><path d="M20594 16060 c-12 -4 -79 -66 -150 -137 -105 -104 -228 -203 -289
+-233 -5 -3 -35 -22 -66 -42 -56 -37 -275 -151 -339 -177 -38 -15 -113 -47
+-145 -61 -11 -5 -45 -19 -75 -30 -30 -12 -64 -26 -75 -30 -88 -37 -123 -52
+-140 -60 -88 -39 -116 -50 -129 -50 -8 0 -17 -4 -20 -9 -3 -5 -17 -12 -30 -15
+-24 -6 -144 -57 -179 -77 -10 -5 -44 -24 -75 -40 -89 -48 -270 -158 -352 -215
+-312 -213 -418 -320 -1044 -1049 -128 -148 -349 -397 -492 -553 -142 -156
+-313 -343 -378 -415 -66 -73 -171 -189 -235 -258 -115 -124 -306 -334 -457
+-501 -44 -47 -191 -209 -329 -358 -137 -150 -294 -322 -348 -381 l-99 -109 5
+-48 c6 -60 25 -162 43 -232 30 -113 69 -238 85 -275 5 -11 16 -42 25 -70 22
+-68 83 -212 171 -405 51 -111 66 -141 89 -180 11 -19 38 -66 59 -105 73 -135
+194 -316 351 -525 129 -172 273 -340 291 -340 17 0 36 31 68 110 35 87 53 126
+189 400 131 266 155 310 251 471 142 235 337 508 503 704 124 145 442 464 554
+556 154 126 318 225 503 304 17 7 47 20 68 29 21 9 46 16 55 16 10 0 22 4 28
+9 5 5 43 18 84 30 41 12 89 26 105 31 99 29 272 63 390 76 33 3 65 10 72 15
+13 11 6 207 -9 225 -5 8 -48 11 -121 11 -102 -1 -117 2 -167 26 -63 30 -98 63
+-129 122 -30 56 -29 168 1 226 28 54 112 139 169 169 123 66 151 77 464 182
+159 52 264 90 330 118 67 28 317 153 348 175 21 14 40 25 42 25 8 0 143 96
+239 169 198 151 616 585 616 639 0 12 -4 22 -10 22 -5 0 -33 -11 -62 -24 -112
+-50 -306 -116 -340 -116 -11 0 -27 -4 -36 -9 -21 -11 -128 -28 -269 -42 -101
+-10 -159 -6 -287 21 -122 25 -253 125 -296 225 -33 78 -25 120 37 203 22 29
+33 55 33 77 0 57 54 198 103 272 57 85 184 208 293 282 390 268 573 447 669
+656 45 99 58 154 62 269 3 84 1 116 -11 141 -9 18 -16 37 -16 43 0 19 -85 105
+-117 118 -37 16 -49 16 -79 4z"/><path d="M19025 11700 c-48 -7 -135 -24 -275 -54 -67 -14 -290 -86 -347 -112
+-17 -8 -34 -14 -37 -14 -19 0 -214 -104 -289 -154 -300 -201 -765 -694 -1038
+-1101 -98 -147 -89 -54 -89 -871 0 -649 2 -724 16 -739 15 -14 115 -15 1078
+-13 883 3 1066 5 1079 17 16 12 17 131 17 1520 0 1159 -3 1510 -12 1519 -13
+13 -26 13 -103 2z"/></g>
+    <g id="right-hand-pillar" fill="#639A67"><path d="M22157 18206 c-12 -13 -14 -223 -15 -1499 -1 -1305 0 -1486 13 -1497
+19 -16 196 -6 305 16 222 46 347 87 520 172 208 101 344 207 616 477 105 105
+235 241 288 304 144 168 358 464 422 581 18 33 19 70 22 729 2 638 1 695 -14
+712 -16 18 -57 19 -1080 19 -911 0 -1065 -2 -1077 -14z"/><path d="M24954 17812 c-10 -6 -34 -59 -69 -152 -15 -40 -82 -205 -95 -235 -5
+-11 -19 -42 -30 -70 -82 -188 -221 -462 -281 -553 -16 -24 -29 -45 -29 -48 0
+-3 -26 -44 -57 -92 -32 -48 -62 -95 -68 -104 -106 -176 -440 -574 -685 -818
+-81 -81 -237 -219 -325 -287 -45 -34 -218 -141 -250 -153 -11 -4 -45 -19 -75
+-33 -57 -26 -292 -104 -390 -130 -90 -24 -421 -77 -480 -77 -35 0 -172 -22
+-280 -45 -36 -8 -78 -16 -95 -18 -30 -4 -89 -18 -180 -42 -27 -8 -79 -21 -115
+-30 -85 -22 -172 -49 -240 -75 -30 -12 -67 -25 -81 -30 -27 -8 -261 -122 -289
+-140 -40 -26 -307 -183 -325 -191 -11 -5 -36 -19 -55 -31 -19 -11 -85 -47
+-147 -79 -103 -53 -155 -76 -363 -162 -41 -17 -82 -36 -90 -42 -8 -6 -32 -20
+-53 -30 -21 -11 -47 -30 -59 -42 -29 -31 -18 -79 31 -134 43 -48 77 -68 162
+-93 76 -22 306 -22 409 0 91 19 174 43 217 61 17 7 36 13 42 13 6 0 25 6 43
+14 18 8 52 21 76 30 144 55 165 63 250 105 34 17 67 31 73 31 6 0 51 20 101
+45 50 25 95 45 99 45 5 0 9 -7 9 -15 0 -16 -45 -101 -66 -126 -8 -8 -14 -19
+-14 -23 0 -14 -156 -214 -271 -346 -120 -138 -333 -353 -449 -451 -71 -61
+-197 -156 -275 -209 -96 -64 -291 -165 -440 -226 -16 -6 -46 -19 -65 -27 -66
+-28 -135 -52 -450 -155 -158 -52 -214 -77 -307 -139 -134 -89 -162 -216 -64
+-290 l43 -33 136 0 c75 0 184 7 242 15 177 26 293 46 335 57 22 6 58 15 80 19
+62 13 157 36 190 48 17 5 59 19 95 30 36 11 90 30 120 41 30 12 63 24 73 27
+19 6 181 87 267 135 122 66 339 213 559 377 125 93 153 104 175 69 9 -14 3
+-25 -29 -59 -56 -57 -396 -314 -533 -401 -80 -51 -296 -161 -401 -204 -47 -20
+-101 -42 -119 -50 -18 -8 -39 -14 -47 -14 -8 0 -29 -6 -47 -14 -18 -8 -60 -22
+-93 -31 -33 -9 -80 -23 -105 -31 -25 -8 -55 -14 -68 -14 -13 0 -33 -5 -44 -11
+-11 -6 -44 -15 -72 -19 -182 -28 -279 -57 -323 -95 -34 -29 -37 -36 -36 -82 1
+-101 71 -168 238 -229 68 -25 301 -25 430 0 145 28 237 48 280 61 22 7 67 21
+100 31 33 9 92 28 130 41 39 14 84 28 100 33 90 24 378 164 515 251 8 5 24 14
+35 19 50 26 271 180 328 230 23 20 71 58 105 83 52 38 67 45 83 37 31 -17 22
+-44 -33 -97 -81 -75 -409 -313 -478 -346 -8 -4 -31 -17 -50 -28 -69 -42 -260
+-138 -347 -175 -138 -57 -144 -60 -208 -79 -33 -10 -76 -23 -95 -30 -93 -34
+-258 -75 -298 -75 -43 0 -102 -25 -102 -44 0 -38 130 -105 289 -148 64 -18
+106 -21 266 -22 155 -1 205 3 270 18 86 21 241 69 290 91 17 7 66 28 110 46
+103 43 335 161 410 209 17 11 39 24 50 30 52 28 215 136 315 210 42 30 85 61
+98 68 40 22 69 11 56 -23 -6 -16 -112 -100 -204 -161 -25 -17 -74 -51 -110
+-75 -36 -25 -112 -73 -170 -108 -58 -34 -112 -67 -120 -72 -15 -9 -206 -103
+-385 -190 -98 -47 -145 -80 -145 -100 0 -19 28 -64 57 -90 15 -14 47 -33 71
+-43 56 -21 206 -22 281 0 31 9 81 23 111 31 73 21 108 33 285 103 83 33 98 39
+205 88 81 38 270 130 290 142 309 181 432 271 640 462 74 68 221 218 326 334
+105 115 240 262 300 327 60 65 136 150 169 190 33 39 98 113 145 162 47 50
+118 129 158 175 39 47 138 158 220 247 81 89 201 221 267 293 66 73 215 236
+331 364 116 127 248 274 294 326 45 52 142 158 214 235 72 78 196 215 276 305
+79 91 181 203 225 250 44 47 119 130 168 184 99 112 98 107 68 256 -47 231
+-94 399 -161 570 -12 30 -25 66 -30 80 -31 94 -168 370 -257 518 -152 254
+-209 334 -406 570 -120 144 -274 312 -286 312 -3 0 -11 -4 -17 -8z"/><path d="M24266 13375 c-10 -15 -50 -63 -89 -107 -40 -45 -94 -107 -122 -139
+-51 -59 -206 -228 -495 -544 -91 -99 -221 -242 -288 -317 -196 -218 -431 -416
+-707 -598 -71 -47 -164 -100 -275 -157 -69 -36 -131 -72 -139 -81 -11 -14 -12
+-239 -7 -1387 5 -954 10 -1373 18 -1382 8 -11 214 -13 1074 -13 l1064 0 15 23
+c13 21 15 281 13 2373 l-3 2349 -21 3 c-14 2 -27 -6 -38 -23z"/></g>
+  </g>
+</svg></div>
+        <div style="font-family:${p.serif}; font-weight:${p.weight}; font-size:${p.size * 0.88}px; letter-spacing:${p.tracking}; line-height:1.1; text-align:center;">
+          Her Helping Hand
+        </div>
+        <div style="font-family:${p.sans}; font-size:9.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; color:var(--olive); margin-top:5px;">
+          Waterloo Region
+        </div>
+        <div class="comp-meta">
+          <strong>${p.name}</strong>
+          <span>Click to Preview ↑</span>
+        </div>
+      `;
+      card.addEventListener("click", () => {
+        applyPairing(p);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      gridEl.appendChild(card);
+    });
+
+    // Live fine-tune controls
+    selWordmark.addEventListener("change", (e) => {
+      const f = e.target.value;
+      document.documentElement.style.setProperty("--wordmark-font", `${f}, Georgia, serif`);
+      document.documentElement.style.setProperty("--heading-font", `${f}, Georgia, serif`);
+    });
+
+    document.getElementById("selBodyFont").addEventListener("change", (e) => {
+      document.documentElement.style.setProperty("--body-font", `${e.target.value}, -apple-system, sans-serif`);
+    });
+
+    document.getElementById("rngWeight").addEventListener("input", (e) => {
+      document.documentElement.style.setProperty("--wordmark-weight", e.target.value);
+      document.getElementById("valWeight").textContent = e.target.value;
+    });
+
+    document.getElementById("rngSize").addEventListener("input", (e) => {
+      document.documentElement.style.setProperty("--wordmark-size", e.target.value + "px");
+      document.getElementById("valSize").textContent = e.target.value + "px";
+    });
+
+    document.getElementById("rngTrack").addEventListener("input", (e) => {
+      const v = e.target.value + "em";
+      document.documentElement.style.setProperty("--wordmark-tracking", v);
+      document.getElementById("valTrack").textContent = v;
+    });
+
+    document.getElementById("selCase").addEventListener("change", (e) => {
+      const v = e.target.value;
+      const wms = document.querySelectorAll(".live-wordmark");
+      if (v === "title-normal") {
+        document.documentElement.style.setProperty("--wordmark-style", "normal");
+        wms.forEach(el => el.textContent = "Her Helping Hand");
+      } else if (v === "title-italic") {
+        document.documentElement.style.setProperty("--wordmark-style", "italic");
+        wms.forEach(el => el.textContent = "Her Helping Hand");
+      } else if (v === "upper-normal") {
+        document.documentElement.style.setProperty("--wordmark-style", "normal");
+        document.documentElement.style.setProperty("--wordmark-tracking", "0.08em");
+        document.getElementById("rngTrack").value = 0.08;
+        document.getElementById("valTrack").textContent = "0.08em";
+        wms.forEach(el => el.textContent = "HER HELPING HAND");
+      }
+    });
+
+    applyPairing(PAIRINGS[4]); // Default to locked F05 (Newsreader + Inter)
+  </script>
+</body>
+</html>

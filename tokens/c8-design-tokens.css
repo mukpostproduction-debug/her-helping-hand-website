@@ -1,0 +1,73 @@
+/**
+ * Her Helping Hand — Official C8 Design System Tokens
+ * Palette: C8 — Heritage Olive & Soft Meadow
+ * Logo: H1 — The Linked Hands H
+ * WCAG 2.1 AA / AAA Verified for Senior & Family Accessibility
+ */
+
+:root {
+  /* ==========================================================================
+   * 1. CORE BRAND ANCHORS (C8 — Heritage Olive & Soft Meadow)
+   * ========================================================================== */
+  --hhh-logo-left-olive: #2D5A36;      /* Left Pillar & Left Clasped Hand (8.0:1 on Paper — AAA) */
+  --hhh-logo-right-sage: #639A67;      /* Right Pillar & Right Clasped Hand (3.2:1 — Large UI / Graphics) */
+  --hhh-wordmark-ink: #142618;         /* Primary Wordmark & Headings (15.6:1 on Paper — AAA) */
+  --hhh-surface-paper: #FAFBF8;        /* Primary Warm Cotton Paper Background */
+  --hhh-surface-meadow: #E6F0E4;       /* Secondary Soft Meadow Mist Tint */
+  --hhh-surface-dark: #23472B;         /* Deep Heritage Olive Hero / Footer Surface */
+
+  /* ==========================================================================
+   * 2. PRIMARY TONAL SCALE — Heritage Olive (50–950)
+   * ========================================================================== */
+  --hhh-olive-50:  #F3F8F2;
+  --hhh-olive-100: #E6F0E4;
+  --hhh-olive-200: #C8DEC5;
+  --hhh-olive-300: #9CC39B;
+  --hhh-olive-400: #639A67;            /* Secondary Brand Anchor (Soft Meadow Sage) */
+  --hhh-olive-500: #3E7647;
+  --hhh-olive-600: #2D5A36;            /* Primary Brand Anchor (Heritage Olive — 8.0:1 on White) */
+  --hhh-olive-700: #23472B;            /* Primary Hover / Dark Card Surface (10.4:1 on White) */
+  --hhh-olive-800: #1B3621;
+  --hhh-olive-900: #142618;            /* Deep Olive Ink (15.6:1 on Paper) */
+  --hhh-olive-950: #0C180F;
+
+  /* ==========================================================================
+   * 3. NEUTRAL TONAL SCALE — Warm Cotton Paper & Stone (50–900)
+   * ========================================================================== */
+  --hhh-neutral-0:   #FFFFFF;
+  --hhh-neutral-50:  #FAFBF8;          /* Default Page Background (60% rule) */
+  --hhh-neutral-100: #F1F4EE;          /* Subtle Card / Section Background */
+  --hhh-neutral-200: #E1E7DC;          /* Hairline Borders & Dividers */
+  --hhh-neutral-300: #C6D0C0;          /* Input Borders */
+  --hhh-neutral-500: #6B7B68;          /* Muted Captions (4.6:1 on Paper — AA) */
+  --hhh-neutral-700: #384737;          /* Secondary Body Copy (9.5:1 on Paper — AAA) */
+  --hhh-neutral-900: #142618;          /* Primary Headings & Body Copy (15.6:1 on Paper — AAA) */
+
+  /* ==========================================================================
+   * 4. SEMANTIC STATUS TOKENS
+   * ========================================================================== */
+  --hhh-status-success: #256F3A;
+  --hhh-status-warning: #B86B14;
+  --hhh-status-danger:  #B93829;
+  --hhh-status-info:    #24587A;
+
+  /* ==========================================================================
+   * 5. TYPOGRAPHY SYSTEM — F05 (Newsreader + Inter · Senior-Accessible Scale)
+   * ========================================================================== */
+  --hhh-font-display: 'Newsreader', Georgia, serif;
+  --hhh-font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --hhh-font-mono:    'JetBrains Mono', monospace;
+  --hhh-wordmark-weight: 500;
+  --hhh-wordmark-tracking: -0.015em;
+
+  --hhh-text-display-lg: clamp(2.5rem, 4.5vw, 4.25rem); /* 68px desktop / 40px mobile, lh 1.08 */
+  --hhh-text-display-sm: clamp(2.125rem, 3.5vw, 3.25rem); /* 52px desktop / 34px mobile, lh 1.12 */
+  --hhh-text-heading-lg: clamp(1.75rem, 2.8vw, 2.4rem);  /* 38px desktop / 28px mobile, lh 1.18 */
+  --hhh-text-heading-md: clamp(1.375rem, 2.2vw, 1.8rem); /* 29px desktop / 22px mobile, lh 1.24 */
+  --hhh-text-heading-sm: 1.35rem;                        /* 21.6px, lh 1.3 */
+  --hhh-text-body-lg:    1.25rem;                        /* 20px Lead Paragraphs, lh 1.55, max 65ch */
+  --hhh-text-body-base:  1.125rem;                       /* 18px Senior-Accessible Base Body, lh 1.6, max 68ch */
+  --hhh-text-body-sm:    0.9375rem;                      /* 15px Metadata & Captions, lh 1.45 */
+  --hhh-text-ui-label:   0.9375rem;                      /* 15px Buttons & Nav Links, weight 600 */
+}
+

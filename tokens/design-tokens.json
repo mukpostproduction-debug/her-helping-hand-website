@@ -1,0 +1,48 @@
+{
+  "brand": "Her Helping Hand",
+  "version": "1.0.0",
+  "region": "Waterloo • Kitchener • St. Jacobs • Elmira",
+  "tagline": "More than a helping hand. A familiar face, meaningful companionship, and peace of mind for your family.",
+  "colors": {
+    "primary": {
+      "forest900": { "hex": "#142D24", "oklch": "oklch(27% 0.045 162)", "role": "Deepest footer & dark surfaces" },
+      "forest800": { "hex": "#1F4337", "oklch": "oklch(35% 0.055 162)", "role": "Primary brand anchor, logo & headings" },
+      "forest700": { "hex": "#2B5B4B", "oklch": "oklch(43% 0.065 162)", "role": "Secondary brand & interactive states" },
+      "sage500":   { "hex": "#4A7C6B", "oklch": "oklch(55% 0.065 162)", "role": "Botanical leaf accent & icons" },
+      "sage200":   { "hex": "#DCE6DF", "oklch": "oklch(91% 0.018 155)", "role": "Soft badges, checklists & dividers" },
+      "sage100":   { "hex": "#EEF3EF", "oklch": "oklch(96% 0.009 155)", "role": "Subtle alternating section background" }
+    },
+    "surfaces": {
+      "linen50": { "hex": "#FBF8F3", "oklch": "oklch(98% 0.010 85)", "role": "Primary warm page background (replaces clinical white)" },
+      "oat100":  { "hex": "#F2ECE1", "oklch": "oklch(94% 0.018 82)", "role": "Cards, testimonial boxes & callouts" },
+      "oat200":  { "hex": "#E5DDD0", "oklch": "oklch(89% 0.022 80)", "role": "Hairline borders & dividers" },
+      "white":   { "hex": "#FFFFFF", "oklch": "oklch(100% 0 0)",     "role": "Form inputs & elevated cards" }
+    },
+    "accents": {
+      "terracotta600": { "hex": "#B55B33", "oklch": "oklch(56% 0.135 42)", "role": "Primary CTA button hover" },
+      "terracotta500": { "hex": "#C86D44", "oklch": "oklch(61% 0.130 44)", "role": "Primary CTA buttons & warm highlights" },
+      "terracotta100": { "hex": "#F9EBE4", "oklch": "oklch(94% 0.025 45)", "role": "Warm callout pill background" },
+      "sun400":        { "hex": "#E2A84B", "oklch": "oklch(76% 0.125 78)", "role": "5-star review badges & warm accents" }
+    },
+    "ink": {
+      "ink900": { "hex": "#1E2421", "contrastOnLinen": "14.8:1 (AAA)", "role": "Primary body & heading text" },
+      "ink700": { "hex": "#3D4641", "contrastOnLinen": "8.9:1 (AAA)",  "role": "Secondary body paragraphs" },
+      "ink500": { "hex": "#5A655F", "contrastOnLinen": "5.4:1 (AA+)",  "role": "Captions & helper metadata" }
+    }
+  },
+  "typography": {
+    "display": {
+      "family": "Fraunces",
+      "fallbacks": ["Georgia", "Times New Roman", "serif"],
+      "weights": [400, 600, 700],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    },
+    "sans": {
+      "family": "Plus Jakarta Sans",
+      "fallbacks": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+      "weights": [400, 500, 600, 700],
+      "baseSizePx": 18
+    }
+  }
+}
+
